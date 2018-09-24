@@ -1,15 +1,17 @@
+/*
+Program created by Otacilio Maia (@OtacilioN)
+A sort algorithm that the complexity is O(infinity)
+It consists in check if the array is sorted, if is not, 
+change randomly two numbers in the array, and repeat untill the array is sorted.
+It is my own version of the bogoSort algorithm
+*/
+    
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
 
 #define FALSE 0
 #define TRUE 1
-
-/*
-Program created by Otacilio Maia (@OtacilioN)
-A sort algorithm that the complexity is O(infinity)
-It is my own version of the bogoSort algorithm
-*/
 
 char _isSorted(int *array, int length);
 void _changeElements(int array[], int length);
