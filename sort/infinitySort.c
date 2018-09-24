@@ -25,6 +25,7 @@ int main(void)
     {
         printf("%d ", inputArray[actualNumber]); // PQ DA DANADOS ESSE PRINT NAO SAI QUANDO EU COLOCO 20?
     }
+    printf("\nSorting...\n");
 
     while (!_isSorted(inputArray, numberOfInputs))
     {
