@@ -5,6 +5,12 @@
 #define FALSE 0
 #define TRUE 1
 
+/*
+Program created by Otacilio Maia (@OtacilioN)
+A sort algorithm that the complexity is O(infinity)
+It is my own version of the bogoSort algorithm
+*/
+
 char _isSorted(int *array, int length);
 void _changeElements(int array[], int length);
 
