@@ -5,7 +5,7 @@ It consists in check if the array is sorted, if is not,
 change randomly two numbers in the array, and repeat untill the array is sorted.
 It is my own version of the bogoSort algorithm
 */
-    
+
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -37,6 +37,8 @@ int main(void)
 
     printf("\nSorting...\n");
 
+    unsigned long long now = time(NULL);
+
     // Checks if the array is sorted and change 2 elements randomly
     while (!_isSorted(array, length))
         _changeElements(array, length);
@@ -45,6 +47,11 @@ int main(void)
     printf("Your array is sorted:\n");
     for (index = 0; index < length; index++)
         printf("%d ", array[index]);
+
+    unsigned long long spentTime = time(NULL) - now;
+
+    printf("\nThe time spent to sort was: %llu seconds\n", spentTime);
+
     return 0;
 }
 
