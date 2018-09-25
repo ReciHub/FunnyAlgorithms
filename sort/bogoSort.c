@@ -55,6 +55,7 @@ int main(void)
 
     printf("\nThe time spent to sort was: %llu seconds\n", spentTime);
     printf("Number of interaction: %d\n", interaction);
+
     return 0;
 }
 
