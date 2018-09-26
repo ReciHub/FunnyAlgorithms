@@ -38,7 +38,7 @@ int main(void)
     printf("\nSorting...\n");
 
     unsigned long long now = time(NULL);
-    int interaction = 0;
+    unsigned long long interaction = 0;
 
     // Checks if the array is sorted and change 2 elements randomly
     while (!_isSorted(array, length))
@@ -54,7 +54,7 @@ int main(void)
     unsigned long long spentTime = time(NULL) - now;
 
     printf("\nThe time spent to sort was: %llu seconds\n", spentTime);
-    printf("Number of interaction: %d\n", interaction);
+    printf("Number of interactions: %d\n", interaction);
 
     return 0;
 }
