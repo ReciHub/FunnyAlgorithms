@@ -1,6 +1,5 @@
 //getting a user input and checking if it is an armstrong number or not
 
-
 #include <stdio.h>
 #include <math.h>
 
