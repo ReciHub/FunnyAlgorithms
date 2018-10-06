@@ -1,37 +1,59 @@
-public class BogoSort {
-    /**
-     * @author james-flynn-ie
-     *
-     * A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
-     * Find the largest palindrome made from the product of two 3-digit numbers.
-     */
+// Java Program to implement BogoSort
+public class BogoSort
+{
+    // Sorts array a[0..n-1] using Bogo sort
+    void bogoSort(int[] a)
+    {
+        // if array is not sorted then shuffle the
+        // array again
+        while (isSorted(a) == false)
+            shuffle(a);
+    }
 
-    public static void main(String[] args) {
-        int largestPalindrome = 0;
-        int largestI = 0;
-        int largestJ = 0;
+    // To generate permuatation of the array
+    void shuffle(int[] a)
+    {
+        // Math.random() returns a double positive
+        // value, greater than or equal to 0.0 and
+        // less than 1.0.
+        for (int i=1; i <= n; i++)
+            swap(a, i, (int)(Math.random()*i));
+    }
 
-        for (int i = 100; i <= 999; i++) {
-            for (int j = 100; j <= 999; j++) {
-                int result = i * j;
-                System.out.println("(" + i + ") * (" + j + ") = " + result);
+    // Swapping 2 elements
+    void swap(int[] a, int i, int j)
+    {
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
 
-                //Convert result to String before reversing.
-                String strResult = Integer.toString(result);
-                String reverseResult = new StringBuffer(strResult).reverse().toString();
+    // To check if array is sorted or not
+    boolean isSorted(int[] a)
+    {
+        for (int i=1; i<a.length; i++)
+            if (a[i] < a[i-1])
+                return false;
+        return true;
+    }
 
-                if ((reverseResult).equals(Integer.toString(result))) {
-                    System.out.println("Palindrome found! " + result);
+    // Prints the array
+    void printArray(int[] arr)
+    {
+        for (int i=0; i<arr.length; i++)
+            System.out.print(arr[i] + " ");
+        System.out.println();
+    }
 
-                    if (result > largestPalindrome) {
-                        largestI = i;
-                        largestJ = j;
-                        largestPalindrome = result;
-                    }
-                }
-            }
-        }
+    public static void main(String[] args)
+    {
+        //Enter array to be sorted here
+        int[] a = {3, 2, 5, 1, 0, 4};
+        BogoSort ob = new BogoSort();
 
-        System.out.println("The largest palindrome from 2 three-digit numbers is: (" + largestI + ") * (" + largestJ + ") = " + largestPalindrome);
+        ob.bogoSort(a);
+
+        System.out.print("Sorted array: ");
+        ob.printArray(a);
     }
 }
