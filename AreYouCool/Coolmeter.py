@@ -1,4 +1,5 @@
 #Code by:Caio Cordeiro
+#Github: github.com/CaioCordeiro
 import random as ran
 while True:
     x = int(input("From 0-100 how cool you think you are?: "))
