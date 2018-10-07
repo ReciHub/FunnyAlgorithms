@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+/*This a example of Factorization*/
 public class Main {
     public static long factorial(int n){
         long accumulator = 1;
