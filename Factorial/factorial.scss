@@ -1,0 +1,50 @@
+/**
+ * Factorial function
+ * Number will be rounded to nearest integer before function run
+ *
+ * @param {Number} $n Positive number or zero (optionally with unit).
+ * @return {Number} - $n! | null
+ */
+@function factorial($n) {
+  $result: 1;
+  $unit: 1;
+
+  @if type_of($n) == 'number' {
+    @if $n < 0 {
+      $result: null;
+    } @else {
+      // Set unit to 1{unit}
+      $unit: $n - $n + 1;
+
+      // Remove unit from $n
+      $n: $n / ($n * 0 + 1);
+
+      $n: round($n);
+
+      @while $n > 0 {
+        $result: $result * $n;
+        $n: $n - 1;
+      }
+
+      $result: $result * $unit;
+    }
+  } @else {
+    $result: null;
+  }
+
+  @return $result;
+}
+
+.factorial {
+  width: factorial(3); // width: 6;
+  width: factorial(3%); // width: 6%;
+  width: factorial(3)+px; // width: 6px;
+  width: factorial(3px); // width: 6px;
+  width: factorial(0deg); // width: 1deg;
+  width: factorial(.499deg); // width: 1deg;
+  width: factorial(1.5deg); // width: 2deg;
+  width: factorial('1'); // results nothing
+  width: factorial('1em'); // results nothing
+  width: factorial(-1px); // results nothing
+  width: factorial(-0px); // width: 1px;
+}
