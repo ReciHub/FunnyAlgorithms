@@ -12,7 +12,7 @@ static const char OUT_OF_MEMORY_ERR[] = "Out of memory exeption";
 static const char FALSE_INDEX_ERR[] = "Invalid index exeption";
 static const char NULLPTR_ERR[] = "Null pointer exeption";
 
-struct __NumList {
+struct __NumList {                                                       //An structure
 	int * items;
 	int length;
 	int capacity;
