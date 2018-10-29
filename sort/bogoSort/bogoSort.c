@@ -1,6 +1,6 @@
 /*
 Program created by Otacilio Maia (@OtacilioN)
-A sort algorithm that the complexity is O(infinity)
+A Sort Algorithm that the complexity is O(infinity)
 It consists in check if the array is sorted, if is not, 
 change randomly two numbers in the array, and repeat untill the array is sorted.
 It is my own version of the bogoSort algorithm
