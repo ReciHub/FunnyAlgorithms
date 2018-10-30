@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+void shellsort(int a[],int n)
+{
+	int i;
+	//gap
+	for(gap=n/2;gap>0;gap/=2)
+	{
+		for(i=gap;i<n;i++)
+		{
+			int temp=a[i];
+			
+			int j;
+			
+			for(j=i;j>=gap && a[j-gap]>temp;j-=gap)
+			{
+				a[j]=a[j-gap];
+			}
+			a[j]=temp;
+		}
+	}
+}
