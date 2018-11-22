@@ -3,8 +3,7 @@
 
 void shellsort(int a[],int n)
 {
-	int i;
-	//gap
+	int i, gap;
 	for(gap=n/2;gap>0;gap/=2)
 	{
 		for(i=gap;i<n;i++)
