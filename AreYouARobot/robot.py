@@ -36,4 +36,3 @@ if(a1 == 4):
         print("You aren't a robot\n")
 else:
     print("You aren't a robot\n")
-
