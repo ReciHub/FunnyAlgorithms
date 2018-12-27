@@ -13,9 +13,9 @@ So why not add the funniest algorithms in this repository? We can share with all
 You can contribute in two ways:
 
 - Add a new algorithm inside a folder, name the folder with the type of the algorithm. Example: (Algorithm: bogoSort.c, folder: sort)
-- Rewrite an existant algorithm in another programming language
+- Rewrite an existing algorithm in another programming language
 
-It is always fun to check new algorithms or sees how the same algorithms are rewritten in different programming languages.
+It is always fun to check new algorithms or see how the same algorithms can be rewritten in different programming languages.
 
 ## Submit a pull request
 
