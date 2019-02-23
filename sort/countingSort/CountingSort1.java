@@ -7,6 +7,12 @@ import java.math.*;
 import java.util.regex.*;
 
 /**
+ * Challenge 
+ * Given a list of integers, count and output the number of times each value appears as a list of space-separated integers.
+ * 
+ * Output
+ * It should return an array of integers where each value is the number of occurrences of the element's index value in the original array.
+ * 
  * 
  * @author gouravrusiya
  *
