@@ -2,7 +2,6 @@
 using namespace std;
 
 int main(void){
-
 	string pin;
 	int flag = 0, i = 1;	
 	while(!flag){
@@ -15,4 +14,5 @@ int main(void){
 			flag = 1;
 	}
 	cout<< "você perdeu";
+	return 0;
 }
