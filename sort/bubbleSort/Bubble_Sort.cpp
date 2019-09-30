@@ -3,13 +3,12 @@
 using namespace std;
 
 void Bubble_Sort(int arr[], int n){
-
+	//variable names must be lowercased by convention
 	int temp;
-	bool Swap;
-
+	bool swapFlag;
 	for(int i=0; i<n; i++){
 
-		Swap = false;
+		swapFlag = false;
 
 		for(int j=0; j<(n-i-1); j++){
 
@@ -17,10 +16,10 @@ void Bubble_Sort(int arr[], int n){
 				temp = arr[j];
 				arr[j] = arr[j+1];
 				arr[j+1] = temp;
-				Swap = true;		//if swapping takes place, set swap to true
+				swapFlag = true;		//if swapping takes place, set swap to true
 			}
 		}
-		if(not Swap) break;		//If swapping was not performed, the array is sorted, break from the loop
+		if(not swapFlag) break;		//If swapping was not performed, the array is sorted, break from the loop
 	}
 }
 
@@ -29,14 +28,18 @@ void Print(int arr[], int n){
 }
 
 int main(){
-
-	int arr[] = {162, 21, -81, -97, 104, 28, 111, -139, -157, 177}, n=10;
+	cout<<"Enter size of array ->";
+	int n;
+	cin>>n;
+	int arr[n];
+	cout<<"Enter "<<n<<" elements of array -> ";
+	for(int i=0;i<n;i++) 
+		cin>>arr[i];
 	cout<<"Orignal Array = ";
 	Print(arr, n);
 	Bubble_Sort(arr, n);
 	cout<<"\n Sorted Array = ";
 	Print(arr, n);
-
 	cout<<endl;
 	return 0;
 }
