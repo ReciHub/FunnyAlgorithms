@@ -1,7 +1,9 @@
 #include<iostream>
 using namespace std;
 
-long long int factorial(long long int n)
+typedef unsigned long long ull;
+
+ull factorial(ull n)
 {
     if(n > 1)
         return n * factorial(n - 1);
@@ -11,13 +13,10 @@ long long int factorial(long long int n)
 
 int main()
 {
-    long long int n;
-
+    ull n;
     cout << "Enter a positive integer: ";
     cin >> n;
-
-    cout << "Factorial of " << n << " = " << factorial(n) << std::endl;
-
+    cout << "Factorial of " << n << " = " << factorial(n) << endl;
     return 0;
 }
 
