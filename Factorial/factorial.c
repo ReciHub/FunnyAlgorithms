@@ -2,17 +2,25 @@
 
 #include<stdio.h> 
 
+typedef long long int llu
+
 // function to find factorial of given number 
-unsigned int factorial(unsigned int n) 
+
+llu factorial(llu n)       //Recursive function for the factorial
 { 
-	if (n == 0) 
-	return 1; 
-	return n*factorial(n-1); 
+	if (n == 0) {
+		return 1;      //Base case for recursive function factorial
+	}
+	
+	else{
+		return n*factorial(n-1);     //If base case is not achieved
+	}
 } 
 
-int main() 
+int main()                         //Driver Function
 { 
-	int num = 5; 
+	llu num;
+	scanf(%lld, &num)
 	printf("Factorial of %d is %d", num, factorial(num)); 
-	return 0; 
-} 
+	return 0;
+}
