@@ -3,7 +3,7 @@ def revesreString(string):
   return string[::-1]
 
 
-print(revesreString(str(input("Enter a string to reverse: "))))
+print(revesreString(input("Enter a string to reverse: ")))
 #print the reversed string
 
 
