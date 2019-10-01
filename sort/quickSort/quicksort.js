@@ -2,6 +2,10 @@
 // It breaks down the array into smaller pieces and connects them at the end
 
 function quickSort(list) {
+  if (!Array.isArray(list)) {
+    throw new TypeError('You can only sort an Array!');
+  }
+
   // If our list holds only one item (or none), then it's already sorted
   // This is also our base case
   if (list.length < 2) {
