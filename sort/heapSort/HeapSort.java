@@ -6,7 +6,7 @@ public class HeapSort {
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(arr, n, i);
         }
-        
+
         for (int i = n - 1; i >= 0; i--) {
             // Move current root to end
             int temp = arr[0];
