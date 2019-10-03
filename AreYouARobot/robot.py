@@ -1,4 +1,4 @@
-# This Script Will tell if you are a robot
+# This script will tell if you are a robot
 import time
 import sys
 
@@ -28,7 +28,7 @@ if(a1 == 4):
     if(a2 == 42):
         delayPrint(questions[4])
         a3 = delayInput(questions[5])
-        if(a3 == "i'm a robot"):
+        if(a3 == "I am a robot"):
             delayPrint("You truly are a robot\n")
         else:
             print("You aren't a robot\n")
