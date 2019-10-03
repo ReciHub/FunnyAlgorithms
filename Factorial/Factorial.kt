@@ -44,4 +44,3 @@ fun factorial(i: Int): Long {
         ac *= n // Kotlin does not need an semicolon after the statements!
     return ac
 }
-

@@ -1,9 +1,8 @@
 def revesreString(string):
     #reverse string argument
-  return string[::-1]
+    return string[::-1]
 
 
-print(revesreString(input("Enter a string to reverse: ")))
+string = input("Enter a string to reverse: ")
 #print the reversed string
-
-
+print(revesreString(string))
