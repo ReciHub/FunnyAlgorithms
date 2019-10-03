@@ -17,6 +17,6 @@ class VolumeOfCylinder {
     }
 
     private static double getVolumeOfCylinder(double r, double h) {
-        return (22 * r * r * h) / 7;
+        return Math.PI * r * r * h;
     }
 }
