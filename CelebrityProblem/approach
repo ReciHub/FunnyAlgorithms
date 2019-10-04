@@ -1,0 +1,4 @@
+If A knows B, then A can’t be celebrity. Discard A, and B may be celebrity.
+If A doesn’t know B, then B can’t be celebrity. Discard B, and A may be celebrity.
+Repeat above two steps till we left with only one person.
+Ensure the remained person is celebrity.
