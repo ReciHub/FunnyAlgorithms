@@ -1,0 +1,11 @@
+eight 0.00
+eleven 0.02
+five 0.00
+four 0.47
+nine 0.00
+one 0.27
+seven 0.00
+six 0.00
+ten 0.00
+three 0.00
+two 0.02
