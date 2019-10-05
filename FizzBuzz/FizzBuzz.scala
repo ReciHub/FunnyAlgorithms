@@ -1,6 +1,6 @@
 object FizzBuzz extends App {
   if (args.length != 1) {
-    println("Error !!! Provide input number")
+    println("Error !!! Provide input number ")
     System.exit(0)
   }
   for (num <- 1 to args(0).toInt) {
