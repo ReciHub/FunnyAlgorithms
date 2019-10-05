@@ -1,4 +1,4 @@
-<?
+<?php
 
 $number = 4;
 $factorial = 1;
