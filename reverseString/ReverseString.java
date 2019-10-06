@@ -1,3 +1,8 @@
+import java.lang.*; 
+import java.io.*; 
+import java.util.*; 
+
+
 // java program to reverse a input string
 
 public class ReverseString{
@@ -7,7 +12,8 @@ public class ReverseString{
     if(args.length > 0){
       // a string is passed
       String reversedString = getReverseString(args[0]); // always choose the first string
-      System.out.println(reversedString);
+      System.out.println("inside getReverseString : " +reversedString);
+      stringReverse(args[0]);
     } else{
       System.out.println("Please provide an argument");
     }
@@ -21,18 +27,19 @@ public class ReverseString{
 
     StringBuilder stringBuilder = new StringBuilder();
     for(int i=len-1; i>=0; i--){
-
-      /*
-      we should not use String object in loop, cause everytime
-      the string object changes Java has to destroy the previous object and create a new one
-      thus for better efficiency StringBuilder is used
-      */
-
       stringBuilder.append(originalString.charAt(i));
     }
 
     return stringBuilder.toString();
 
   }
-
+  
+  private static void stringReverse(String input) 
+	{ 
+		StringBuilder input1 = new StringBuilder(); 
+		input1.append(input); 
+		input1 = input1.reverse(); 
+		System.out.println("inside String reverse : " + input1); 
+	} 
 }
+
