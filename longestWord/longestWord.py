@@ -1,7 +1,18 @@
-Python 3.7.0 (v3.7.0:1bf9cc5093, Jun 27 2018, 04:59:51) [MSC v.1914 64 bit (AMD64)] on win32
-Type "copyright", "credits" or "license()" for more information.
->>> 
- RESTART: C:\Users\Acer\Documents\GitHub\FunnyAlgorithms\longestWord\longestWord.py 
-Enter a string: vb23 dfgdgdfg
-dfgdgdfg
->>> 
+def longestWord(string):
+    length =0
+    lonWord = ""
+    words = []
+    stringList = string.split(" ")
+    for word in stringList: #iterate over stringList array
+        if len(word)> length: #check lengths
+            words = []
+            words.append(word)
+            #lonWord = word
+            length = len(word)
+        elif len(word)== length:
+            words.append(word)
+    return ",".join(words)
+print(longestWord(input("Enter a string: "))) #print longest word in string
+
+            
+        
