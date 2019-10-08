@@ -13,41 +13,43 @@ using namespace std;
 			if (kitkat_choice == 1) {
 				cout<<"You are weird.";
 				game_in_progress = false;
-			} else if (kitkat_choice == 2) {
+			} 
+			else if (kitkat_choice == 2) {
 				  cout<<"You are normal... so far.";
 				  cout<<"Do you pour the milk first or the cereal?";
 				  cout<<"(Type in '1' for milk or '2' for cereal)";
 				  int breakfast_choice;
 				  cin>>breakfast_choice;
 				
-			  	if (breakfast_choice == 1) {
+			if (breakfast_choice == 1) {
 				  	cout<<"You are weird";
 					  game_in_progress = false;
-				  } else if (breakfast_choice == 2) {
-					  cout<<"OK... you are still normal...";
-					  cout<<"Do you chomp out a whole bite of a string cheese stick or do you peel individual strings off and eat them?";
-					  cout<<"(Type in '1' for the first option or '2' for the second one)";
+			} 
+			else if (breakfast_choice == 2) {
+				cout<<"OK... you are still normal...";
+				cout<<"Do you chomp out a whole bite of a string cheese stick or do you peel individual strings off and eat them?";
+				cout<<"(Type in '1' for the first option or '2' for the second one)";
 
-					  int cheese_choice;
-					  cin>>cheese_choice
+				int cheese_choice;
+				cin>>cheese_choice;
 					
-					  if (cheese_choice == 1) {
-  						cout<<"Nope. You're weird.";
-	  					game_in_progress = false;
-		  			} else if (cheese_choice == 2) {
-			  			cout<<"You made it! Congratulations, you're not weird.";
-				  		game_in_progress = false;
-					  } else {
-						  cout<<"Invalid Input. Restart"<<endl;
-					    }
-					
-				} else {
-					cout<<"Invalid Input. Restart"<<endl;
+				if (cheese_choice == 1) {
+  					cout<<"Nope. You're weird.";
+	  				game_in_progress = false;
+		  		} 
+		  		else if (cheese_choice == 2) {
+			  		cout<<"You made it! Congratulations, you're not weird.";
+				  	game_in_progress = false;
+				} 
+				else {
+				    cout<<"Invalid Input. Restart"<<endl;
 				}
-				
-			} else {
-				cout<<"Invalid Input. Restart";
+			} 
+			else {
+				cout<<"Invalid Input. Restart"<<endl;
 			}
-		}
+				
+		} 
+		cout<<"Invalid Input. Restart";
 		return 0;
-	}
+	}}
