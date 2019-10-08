@@ -147,8 +147,8 @@ def evaluationFunction(gameState):
                 me += 1
             if gameState.board[wins[i]] == E:
                 empty += 1
-        # print((me,3-me-empty))
-        # print(heuristicArray[me][3-me-empty])
+          print((me,3-me-empty))
+          print(heuristicArray[me][3-me-empty])
         heuristic += heuristicArray[me][3-me-empty]
 
     return heuristic
