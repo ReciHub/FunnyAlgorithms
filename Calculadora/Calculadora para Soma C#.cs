@@ -6,7 +6,7 @@ public class Program
 	{
 		int num, numDois;
 
-    	Console.WriteLine ("Subtração ou Soma");
+    	Console.WriteLine ("Soma");
 
     	Console.Write("Primeiro número: ");
     	num = int.Parse(Console.ReadLine());
