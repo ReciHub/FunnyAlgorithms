@@ -1,4 +1,3 @@
-```cpp
 #include <bits/stdc++.h> 
 using namespace std; 
   
@@ -38,4 +37,3 @@ int main()
     cout<<knapSack(W, wt, val, n);  
     return 0;  
 }  
-```
