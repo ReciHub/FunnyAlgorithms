@@ -1,5 +1,4 @@
 import random
-import sys
 
 # Create a list of [width][height] with borders
 def createGrid(width, height):
@@ -16,10 +15,11 @@ def createGrid(width, height):
 def gerateMaze(width, height):
 
     maze = createGrid(width, height)
+    grid = createGrid(width, height)
 
-    largura = (len(maze[0]) - 1) // 2
-    altura = (len(maze) - 1) // 2
-    visit = [[0] * largura + [1] for _ in range(altura)] + [[1] * (largura + 1)]
+    width_aux = (len(maze[0]) - 1) // 2
+    height_aux = (len(maze) - 1) // 2
+    visit = [[0] * width_aux + [1] for _ in range(height_aux)] + [[1] * (width_aux + 1)]
 
     # Algorithm to walk randomly in the maze
     def drunk_walker(x, y):
@@ -38,29 +38,49 @@ def gerateMaze(width, height):
             if visit[yy][xx]:
                 continue
             if xx == x:
-                maze[max(y, yy) * 2][x * 2 + 1] = 1
+                maze[max(y, yy) * 2][x * 2 + 1] = 0
             if yy == y:
-                maze[y * 2 + 1][max(x, xx) * 2] = 1
+                maze[y * 2 + 1][max(x, xx) * 2] = 0
 
             drunk_walker(xx, yy)
 
-    drunk_walker(random.randrange(largura), random.randrange(altura))
+    drunk_walker(random.randrange(width_aux), random.randrange(height_aux))
 
+    #Define exit of maze
     max_coord = len(maze) - 1
     maze[max_coord - 1][max_coord] = 0
 
+    #Define start of maze
+    maze[max_coord][1] = 0
+
     return maze
 
-#w = int(input("Width: "))
-#h = int(input("Height: "))
+valid_input = False
+while (not valid_input):
+    size = input("Size: ")
 
-w = 21
-h = 21
+    if (size.isnumeric()):
+        valid_input = True
+        w = int(size)
+        h = int(size)
+    else:
+        print("Invalid size.")
+
+if (w % 2 == 0):
+    w += 1
+if (h % 2 == 0):
+    h += 1
 
 maze = gerateMaze(w, h)
 
-pp = lambda arr: print (*arr, sep="{:4}".format(''))
+def color_wall(skk): return("\033[1;90;100m {:2}\033[00m" .format(skk)) 
+def color_floor(skk): return("\033[1;107m {:2}\033[00m" .format(skk)) 
 
 for line in maze:
-    pp(line)
-
+    str_builder = ''
+    for item in line:
+        if item == 1:
+            str_builder += color_wall(item)
+        else: 
+            str_builder += color_floor(item)
+    print(str_builder)
