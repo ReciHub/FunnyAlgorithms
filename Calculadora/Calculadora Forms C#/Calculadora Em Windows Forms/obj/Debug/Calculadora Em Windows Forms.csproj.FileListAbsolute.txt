@@ -1,0 +1,10 @@
+C:\Users\aluno.NAVERECIFE\source\repos\Calculadora Em Windows Forms\Calculadora Em Windows Forms\bin\Debug\Calculadora Em Windows Forms.exe.config
+C:\Users\aluno.NAVERECIFE\source\repos\Calculadora Em Windows Forms\Calculadora Em Windows Forms\bin\Debug\Calculadora Em Windows Forms.exe
+C:\Users\aluno.NAVERECIFE\source\repos\Calculadora Em Windows Forms\Calculadora Em Windows Forms\bin\Debug\Calculadora Em Windows Forms.pdb
+C:\Users\aluno.NAVERECIFE\source\repos\Calculadora Em Windows Forms\Calculadora Em Windows Forms\obj\Debug\Calculadora Em Windows Forms.csprojAssemblyReference.cache
+C:\Users\aluno.NAVERECIFE\source\repos\Calculadora Em Windows Forms\Calculadora Em Windows Forms\obj\Debug\Calculadora_Em_Windows_Forms.Form1.resources
+C:\Users\aluno.NAVERECIFE\source\repos\Calculadora Em Windows Forms\Calculadora Em Windows Forms\obj\Debug\Calculadora_Em_Windows_Forms.Properties.Resources.resources
+C:\Users\aluno.NAVERECIFE\source\repos\Calculadora Em Windows Forms\Calculadora Em Windows Forms\obj\Debug\Calculadora Em Windows Forms.csproj.GenerateResource.cache
+C:\Users\aluno.NAVERECIFE\source\repos\Calculadora Em Windows Forms\Calculadora Em Windows Forms\obj\Debug\Calculadora Em Windows Forms.csproj.CoreCompileInputs.cache
+C:\Users\aluno.NAVERECIFE\source\repos\Calculadora Em Windows Forms\Calculadora Em Windows Forms\obj\Debug\Calculadora Em Windows Forms.exe
+C:\Users\aluno.NAVERECIFE\source\repos\Calculadora Em Windows Forms\Calculadora Em Windows Forms\obj\Debug\Calculadora Em Windows Forms.pdb
