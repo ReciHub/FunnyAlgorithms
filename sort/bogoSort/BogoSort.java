@@ -6,12 +6,13 @@ public class BogoSort
     {
         // if array is not sorted then shuffle the
         // array again
-        while (isSorted(a) == false)
-            shuffle(a);
+        while (isSorted(a) == false) {
+            shuffle(a, a.length - 1);
+        }
     }
 
     // To generate permuatation of the array
-    void shuffle(int[] a)
+    void shuffle(int[] a, int n)
     {
         // Math.random() returns a double positive
         // value, greater than or equal to 0.0 and

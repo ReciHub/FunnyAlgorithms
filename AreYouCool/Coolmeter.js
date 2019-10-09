@@ -1,6 +1,8 @@
+
 // Code by:Shashank
 // Github: github.com/shshankm597
 Math.floor(Math.random() * 20);
+
 
 function Coolmeter () {
   const x = Number(prompt("From 0-100 how cool you think you are?: "));
