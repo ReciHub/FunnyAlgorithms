@@ -1,0 +1,31 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int a,b,c=0,r,s=0,k=0;
+    scanf("%d",&a);
+    b=a;
+    while(a)
+    {
+        a=a/10;
+        c++;
+    }
+    a=b;
+    while(b)
+    {
+        r=b%10;
+        k=pow(r,c);
+        s=s+k;
+        
+        b=b/10;
+    }
+    if(a==s)
+    {
+        printf("The given number is a Armstrong number:%d",a);
+    }
+    else
+    {
+        printf("The given number is not a Armstrong number:%d",a);
+    }
+    return 0;
+}
