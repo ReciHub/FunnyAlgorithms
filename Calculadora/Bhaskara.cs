@@ -6,9 +6,9 @@ public class Program
 	{
 		double a, b, c, delta, bhaskara;
 		
-    		a = 0;
+        a = 0;
    		b = 0;
-    		c = 0;
+        c = 0;
 		delta = 0;
 		bhaskara = 0;
 		
@@ -36,15 +36,15 @@ public class Program
 	
 	public static double CalculoBhaskaraP(double delta, double bhaskarap, double a, double b)
 	{
-    		double quadrado = (double)Math.Sqrt(delta);
-		bhaskarap = ((b * b) + quadrado) / 2 * a;
+		double quadrado = (double)Math.Sqrt(delta);
+		bhaskarap = (-b + quadrado) / (2 * a);
 		return bhaskarap;
 	}
 	
 	public static double CalculoBhaskaraN(double delta, double bhaskaran, double a, double b)
 	{
-    		double quadrado = (double)Math.Sqrt(delta);
-		bhaskaran = ((b * b) - quadrado) / 2 * a;
+		double quadrado = (double)Math.Sqrt(delta);
+		bhaskaran = (-b - quadrado) / (2 * a);
 		return bhaskaran;
 	}
 }
