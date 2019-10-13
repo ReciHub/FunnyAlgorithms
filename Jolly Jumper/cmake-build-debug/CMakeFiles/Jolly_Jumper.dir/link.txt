@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/Jolly_Jumper.dir/main.cpp.o  -o Jolly_Jumper.exe -Wl,--out-implib,libJolly_Jumper.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
