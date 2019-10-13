@@ -1,0 +1,1 @@
+It is a new sort algorithm that can complete under O(n) time. This algorithm eliminates (purges) all un-sorted numbers in the given list and returns the sorted, perhaps shorter, list.
