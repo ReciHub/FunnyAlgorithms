@@ -10,7 +10,7 @@ void copy(int destiny[],int k,int source[],int l, int r){
         destiny[k++] = source[i];
 }
 
-//merge the b and c arrays and put on the a array based from the smallers of both b and c arrays
+//merge the b and c arrays and put on the a array based on the smaller element of both b and c arrays
 void merge(int b[],int c[],int a[],int p, int q){
     int i,j,k;
     i=j=k=0;
@@ -30,7 +30,7 @@ void merge(int b[],int c[],int a[],int p, int q){
 }
 
 //keep calling the function recursively until get just 1 element
-//copy 2 halves of the a array, and merge both using the mege function
+//copy 2 halves of the array a[], and merge both using the merge function
 void mergesort(int a[], int n){
     if(n > 1){
         int b[n/2],c[n/2+1];
