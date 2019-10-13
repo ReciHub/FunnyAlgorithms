@@ -1,0 +1,3 @@
+/cygdrive/e/Programs/C++ Programs/C++/Stalin Sort/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/cygdrive/e/Programs/C++ Programs/C++/Stalin Sort/cmake-build-debug/CMakeFiles/Stalin_Sort.dir
+/cygdrive/e/Programs/C++ Programs/C++/Stalin Sort/cmake-build-debug/CMakeFiles/edit_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g  -Wl,--enable-auto-import CMakeFiles/Stalin_Sort.dir/main.cpp.o  -o Stalin_Sort.exe -Wl,--out-implib,libStalin_Sort.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
