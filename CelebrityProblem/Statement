@@ -1,0 +1,22 @@
+You are in a party of N people, where only one person is known to everyone. Such a person may be present in the party, if yes, (s)he doesn’t know anyone in the party. Your task is to find the stranger (celebrity) in party.
+You will be given a square matrix M[][] where if an element of row i and column j  is set to 1 it means ith person knows jth person. You need to complete the function getId() which finds the id of the celebrity if present else return -1. The function getId() takes two arguments, the square matrix M and its size N.
+
+
+Example:
+Input (To be used only for expected output) :
+2
+3
+0 1 0 0 0 0 0 1 0
+2
+0 1 1 0
+
+Output :
+1
+-1
+
+Explanation :
+For the above test case the matrix will look like
+0 1 0 
+0 0 0
+0 1 0
+Here,  the celebrity is the person with index 1 ie id 1
