@@ -1,0 +1,12 @@
+2019/03/05-12:59:05.288 1de4 Reusing MANIFEST C:\Users\joker\OneDrive\Área de Trabalho\DS_projetos\BotWPP\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2019/03/05-12:59:05.289 1de4 Recovering log #4
+2019/03/05-12:59:05.465 1de4 Reusing old log C:\Users\joker\OneDrive\Área de Trabalho\DS_projetos\BotWPP\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000004.log 
+2019/03/05-12:59:14.453 5bcc Level-0 table #8: started
+2019/03/05-12:59:14.767 5bcc Level-0 table #8: 1317928 bytes OK
+2019/03/05-12:59:14.877 5bcc Delete type=0 #4
+2019/03/05-12:59:56.870 5bcc Compacting 1@1 + 1@2 files
+2019/03/05-12:59:57.426 5bcc Generated table #9@1: 36741 keys, 1613922 bytes
+2019/03/05-12:59:57.426 5bcc Compacted 1@1 + 1@2 files => 1613922 bytes
+2019/03/05-12:59:57.593 5bcc compacted to: files[ 0 0 1 0 0 0 0 ]
+2019/03/05-12:59:57.594 5bcc Delete type=2 #5
+2019/03/05-12:59:57.595 5bcc Delete type=2 #8

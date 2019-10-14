@@ -1,0 +1,4 @@
+[19828:22628:0305/162349.486:INFO:CONSOLE(8)] "SW registered", source: https://www.google.com/_/chrome/newtab?ie=UTF-8 (8)
+[19828:22628:0305/163703.692:WARNING:pref_notifier_impl.cc(23)] Pref observer found at shutdown.
+[19828:22628:0305/163703.692:WARNING:pref_notifier_impl.cc(23)] Pref observer found at shutdown.
+[19828:22628:0305/163703.692:WARNING:pref_notifier_impl.cc(23)] Pref observer found at shutdown.
