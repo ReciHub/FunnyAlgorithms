@@ -1,7 +1,6 @@
 <?php
 
 print "Input a positive number\n";
-//$line = trim(fgets(STDIN)); // reads one line from STDIN
 fscanf(STDIN, "%d\n", $number);
 $a = 1;
 $b = 1;
