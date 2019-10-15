@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-struct pt {
+struct pt { /// struct that represents a point
     double x, y;
 };
 
@@ -47,7 +47,7 @@ void convex_hull(vector<pt>& a) {
 int main(){
     vector<pt> points;
     pt p1,p2,p3,p4;
-    p1.x = 1;
+    p1.x = 1;   ///randoms points
     p1.y = 2;
     p2.x = 5;
     p2.y = 7;
