@@ -23,4 +23,4 @@ After adding your funny algorithm share with us making a [pull request](https://
 
 ## Enjoyed? 
 
-Leave a :star: to the repository and share this with your friends!
+Leave a :star: to the repository and share this with your friends !!
