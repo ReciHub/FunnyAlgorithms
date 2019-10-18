@@ -2,7 +2,7 @@ using System;
 					
 public class Program
 {
-	public static void Main()
+	public static void Main(string[] args)
 	{
 		int num1, num2;
 
@@ -12,7 +12,7 @@ public class Program
         Console.Write("Digite o segundo número: ");
     	num2 = int.Parse(Console.ReadLine());
 
-    	Console.WriteLine(Soma(num, num2));
+    	Console.WriteLine(Multiplica(num, num2));
   	}
 
   	public static int Multiplica(int num1, int num2)
