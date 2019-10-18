@@ -1,4 +1,4 @@
-"""Restore path for a chess knoght from the start to the end points, using
+"""Restore path for a chess knight from the start to the end points, using
 original chess rules regarding its movements
 """
 
