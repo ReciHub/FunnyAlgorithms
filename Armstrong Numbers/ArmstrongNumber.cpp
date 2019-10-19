@@ -1,24 +1,28 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
-  int origNum, num, rem, sum = 0;
+  int origNum, num, rem, sum = 0,store_orignum;
   cout << "Enter a positive  integer: ";
   cin >> origNum;
 
-  num = origNum;
-
-  while(num != 0)
+  store_orignum=num=origNum;
+  int count=0;
+  while(num!=0)  //counting the number of digits.
   {
-      rem = num % 10;
-      sum += rem * rem * rem;
-      num /= 10;
+    count++;
+    num/=10;
   }
-
-  if(sum == origNum)
-    cout << origNum << " is an Armstrong number.\n";
+  while(origNum != 0)
+  {
+      rem = origNum % 10;
+      sum =sum+pow(rem,count);
+      origNum /= 10;
+  }
+  if(sum == store_orignum)
+    cout << store_orignum<<" is an Armstrong number.\n";
   else
-    cout << origNum << " is not an Armstrong number.\n";
+    cout << store_orignum<< " is not an Armstrong number.\n";
 
   return 0;
 }
