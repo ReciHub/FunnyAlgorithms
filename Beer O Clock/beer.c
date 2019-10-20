@@ -1,4 +1,4 @@
-//Beer O Clock in C    :)
+//Beer O Clock in C  :)
 
 #include<stdlib.h>
 
