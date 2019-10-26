@@ -1,9 +1,18 @@
-num = input('Enter any number : ')
-try:
-    val = int(num)
-    if num == str(num)[::-1]:
-        print('The given number is PALINDROME')
-    else:
-        print('The given number is NOT a palindrome')
-except ValueError:
-    print("That's not a valid number, Try Again !")
+def check_palin(string):
+    n = len(string)
+    for i in range(int(n/2)):
+        if(string[i]!=string[n-i-1]):
+            return False
+
+    return True
+
+def main():
+    print("Input the String: ")
+    string = input()
+
+    if(check_palin(string)):
+        print("String is a Palindrome")
+        print("String is not a Palindrome")
+
+if __name__ == '__main__':
+    main()
