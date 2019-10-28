@@ -1,0 +1,27 @@
+import java.util.Scanner
+class Armstrong
+{
+public static void main(String[] args)
+{
+int n;
+int a;
+int r;
+System.out.println("Enter a number");
+Scanner sc=new Scanner(System.in);
+n=sc.nextInt();
+while(n>0)
+{
+a=n%10;
+r=r+(a*a*a);
+n=n/10; 
+}
+if(r==n)
+{
+System.out.println("it is an armstrong number");
+}
+else
+{
+Sstem.out.println("it is ot an amstrong number")
+}
+}
+}
