@@ -1,10 +1,10 @@
 # Contribution Guidelines
 
-_Welcome hackers it is really **awesome** have you here! Before start contributing with this project make sure you read our [Code Of Conduct](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CODE_OF_CONDUCT.md), it is really important to make this inclusive and open to everyone_
+_Welcome hackers it is really **awesome**  to have you here! Before you start contributing to this project make sure you read our [Code Of Conduct](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CODE_OF_CONDUCT.md), it is really important to make this inclusive and open to everyone.
 
 ## Do you have some funny algorithm and want to share with the world?
 
-Add in this repository so others can find it too and have funny moments reading code, but make sure that your code does not violate our code of conduct, to add you code follow these steps!
+Add it in this repository so that others can find it, and have funny moments reading code, but make sure that your code does not violate our code of conduct, to add you code follow these steps!
 
 ## Submitting a pull request
 
