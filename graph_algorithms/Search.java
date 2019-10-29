@@ -7,12 +7,17 @@ public class Search {
 	private final int s;
 	private boolean marked[];
 	private int edgeTo[];
-	 Search(Graph g,int s){
+	/*
+	This takes a graph object and the source object . 
+	Option 0 will give you dfs and option 1 gives bfs
+	*/
+	Search(Graph g,int s,int option){
 		 this.g=g;
 		 this.s=s;
 		 marked=new boolean[g.getV()];
 		 edgeTo=new int[g.getV()];
-		 dfs(s);
+		 if(option==0) dfs(s);
+		 else bfs(s);
 	 }
 	 private void dfs(int v) {
 		 marked[v]=true;
@@ -20,6 +25,22 @@ public class Search {
 			 edgeTo[w]=v;
 			 if(!marked[w])dfs(w);
 		 }
+	 }
+	 private void bfs(int s){
+		marked[s]=true;
+		Queue<Integer> queue=new LinkedList<Integer>();
+		queue.add(s);
+		while(queue.size()!=0){
+		 int v=queue.pop();
+		 for(int w:g.adj(v)){
+		 if(!marked[w]){
+		 	edgeTo[w]=v;
+		 	marked[w]=true;
+		 	queue.add(w);	
+		 
+		 }
+		
+		}
 	 }
 	 private boolean isConnected(int v) {
 		 return marked[v];
