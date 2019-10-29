@@ -1,7 +1,7 @@
 
 
 import java.util.Stack;
-
+import java.util.Queue;
 public class Search {
 	private final Graph g;
 	private final int s;
@@ -9,7 +9,12 @@ public class Search {
 	private int edgeTo[];
 	/*
 	This takes a graph object and the source object . 
-	Option 0 will give you dfs and option 1 gives bfs
+	Option 0 will give you dfs and option 1 gives bfs.
+	If you are searching for the graph object then this is in the same class. 
+	The graph is implemented using Adjacency List . The bfs will give you the
+	shortest path between two nodes on the graph . This is because 
+	of using the queue. We pick only the nodes that are the nearest to the current node we are checking . 
+	
 	*/
 	Search(Graph g,int s,int option){
 		 this.g=g;
