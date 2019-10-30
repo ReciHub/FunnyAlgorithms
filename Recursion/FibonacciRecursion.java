@@ -9,7 +9,7 @@ public class FibonacciRecursion {
              System.out.print(" "+n3);     
              fibonacciSeries(count-1);      
          }      
-     }        
+    }        
   
 public static void main(String[] args) {  
     Scanner scanner = new Scanner(System.in);
