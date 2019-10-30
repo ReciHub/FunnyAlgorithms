@@ -1,0 +1,25 @@
+public class Vertex{
+	private int grau;
+	private Circle vetex;
+	private double x;
+	private double y;
+	
+	public Vertex(int grau,double lat,double lon){
+		this.grau  = grau;
+		
+		this.x = (list.get(i).getLongitude() + 180) * (mapW / 360);
+        double latRad = list.get(i).getLatitude() * Math.PI / 180;
+        double mercN = Math.log(Math.tan((Math.PI/4) + (latRad/2)));
+        this.y = (mapH/2) - (mapW*mercN/(2*Math.PI));
+
+		this.vetex = new Circle(5);
+		this.vetex.setTranslateX((int)x);
+		this.vetex.setTranslateX((int)y);
+		this.vertex.setFill(Color.RED);
+	}// End Vertex()
+	
+	public Group setGroup(Group group){
+		group.getChildren().add(vetex);
+		return group;
+	}// End setScene()
+}// End Vertex
