@@ -1,0 +1,41 @@
+/*package whatever //do not write package name here */
+//  https://practice.geeksforgeeks.org/problems/coin-change/0/?ref=self
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+    static int N;
+    static int[] arr;
+    static int C;
+    static long[][] dp;
+	public static void main (String[] args) {
+		Scanner scrn=new Scanner(System.in);
+		int T=scrn.nextInt();
+		while(T-->0){
+		    N=scrn.nextInt();
+		    arr=new int[N];
+		    for(int i=0;i<N;i++){
+		        arr[i]=scrn.nextInt();
+		    }
+		    C=scrn.nextInt();
+		    dp=new long[C+1][N+1];
+		    for(long[] rows:dp){
+		        Arrays.fill(rows,-1);
+		    }
+		    System.out.println(ways(C,0));
+		}
+	}
+	static long ways(int change,int pos){
+	    if(change==0)return 1;
+	    if(pos>=N)return 0;
+	    if(dp[change][pos]!=-1)return dp[change][pos];
+	    long ret=0;
+	    int val=arr[pos];
+	    if(val<=change){
+	        ret+=ways(change-val,pos);
+	    }
+	    ret+=ways(change,pos+1);
+	    return dp[change][pos]=ret;
+	}
+}
