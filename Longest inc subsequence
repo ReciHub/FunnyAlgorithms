@@ -1,0 +1,23 @@
+public class Solution {
+    // note to user longest increasing subsequence != longest non decreasing subsequence. WHY?.
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int lis(final List<Integer> A) {
+        int ans=0;
+        ArrayList<Integer> al=new ArrayList<>();
+        for (int i=0;i<A.size();i++){
+            int ele=A.get(i);
+            if (al.size()==0||ele>al.get(al.size()-1)){
+                al.add(ele);
+            }else{
+                int pos= Collections.binarySearch(al,ele);
+                if (pos<0){
+                    pos=pos*-1-1;
+                }
+                al.remove(pos);
+                al.add(pos,ele);
+            }
+            ans=Math.max(ans,al.size());
+        }
+        return ans;
+    }
+}
