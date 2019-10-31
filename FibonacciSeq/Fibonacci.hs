@@ -1,7 +1,7 @@
 -- Luis L Reyes
 -- fibonacci function takes in the nth number
 -- of the sequence you want where sequence
--- is zero while n = 0 or 1
+-- is 1 while n = 0 or 1
 module Fibonacci where
     fibonacci :: Integer -> Integer
     fibonacci 0 = 1
