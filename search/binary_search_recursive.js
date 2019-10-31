@@ -11,7 +11,7 @@ function recursiveBinarySearch (arr, x, start, end) {
     let mid = Math.floor((start + end)/2); 
    
     // Compare mid with given key x 
-    if (arr[mid] === x) return x; 
+    if (arr[mid] === x) return mid; 
           
     // If element at mid is greater than x, search in the left half of mid 
     if(arr[mid] > x)  {
