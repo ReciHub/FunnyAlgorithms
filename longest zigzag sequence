@@ -1,0 +1,44 @@
+/*package whatever //do not write package name here */
+//  https://practice.geeksforgeeks.org/problems/largest-zigzag-sequence/0
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+    static int N;
+    static int[][] arr;
+    static long[][] dp;
+	public static void main (String[] args) {
+		Scanner scrn=new Scanner(System.in);
+		int T=scrn.nextInt();
+		while(T-->0){
+		     N=scrn.nextInt();
+		     arr=new int[N][N];
+		    for(int i=0;i<N;i++){
+		        for(int j=0;j<N;j++){
+		            arr[i][j]=scrn.nextInt();
+		        }
+		    }
+		    dp = new long[N+5][N+5];
+		    for(long[] arr:dp){
+		        Arrays.fill(arr,-1);
+		    }
+		 long ans=Integer.MIN_VALUE;
+		 for(int i=0;i<N;i++){
+		     ans=Math.max(ans,solve(0,i));
+		 }
+		  System.out.println(ans);  
+		}
+	}
+	static long solve(int i,int j){
+	    if(i==N)return 0;
+	    if(dp[i][j]!=-1)return dp[i][j];
+        long max=Integer.MIN_VALUE;
+        for(int k=0;k<N;k++){
+            if(k!=j)
+            max=Math.max(max,solve(i+1,k));
+        }
+        max+=arr[i][j];
+        return dp[i][j]=max;
+	}
+}
