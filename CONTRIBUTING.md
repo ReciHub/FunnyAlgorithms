@@ -1,6 +1,6 @@
 # Contribution Guidelines
 
-_Welcome hackers it is really **awesome** have you here! Before start contributing with this project make sure you read our [Code Of Conduct](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CODE_OF_CONDUCT.md), it is really important to make this inclusive and open to everyone_
+_Welcome hackers it is really **awesome** to have you here! Before start contributing with this project make sure you read our [Code Of Conduct](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CODE_OF_CONDUCT.md), it is really important to make this inclusive and open to everyone_
 
 ## Do you have some funny algorithm and want to share with the world?
 
