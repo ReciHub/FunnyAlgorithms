@@ -4,7 +4,7 @@ const readline = require("readline").createInterface({
 });
 
 readline.question(
-  `Should I check if it is time to have Beer ? (Y / N): `,
+  `Should I check if it is time to have Beer for Hacktoberfest? (Y / N): `,
   result => {
     result = result.toString().toLowerCase();
     if (result == "y") {
