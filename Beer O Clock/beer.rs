@@ -10,7 +10,7 @@ fn main() {
         println!("It is always time for beer!!!!");
     }
     else if beer.trim()=="n" || beer.trim()=="N" {
-        println!("Guess I'll check out later");
+        println!("You are lying. This can't be!");
     }
     else {
         println!("Invalid input");
