@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-int fib(int n);
+void fib(int n);
 
 int main()
 {
@@ -9,18 +9,20 @@ int main()
 
     cout << "Enter a positive integer: ";
     cin >> n;
-	cout << "Fib of " << n << " = " << fib(n) << std::endl;
+	cout << "Fib of " << n << " = " ;
+	fib(n);
     return 0;
 }
 
-int fib(int n)
+void fib(int n)
 {
-	if(n == 0 || n == 1)
-	{
-		return 1;
-	}
-    else if(n > 1)
+    int sum1=0,sum2=1,i,sum;
+    cout<<"0 ";
+    for(i=1;i<=n;i++)
     {
-        return (fib(n - 2) + fib(n - 1));
-    }
+        sum=sum1+sum2;
+        sum2=sum1;
+        sum1=sum;
+        cout<<sum<<" ";
+}
 }
