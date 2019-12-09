@@ -5,8 +5,6 @@ def bubble_sort(alist):
             if alist[j + 1] < alist[j]:
                 alist[j], alist[j + 1] = alist[j + 1], alist[j]
                 no_swap = False
-        if no_swap:
-            return
  
  
 alist = input('Enter the list of numbers: ').split()
