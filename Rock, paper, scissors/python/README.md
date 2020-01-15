@@ -39,4 +39,4 @@ Aplicação simples que permite o usuário jogar "Pedra, papel e tesoura" no con
           * ~~É envenenado pelo _Lagarto_ **(-)**~~ (Como o computador não pode escolher opções easter eggs, essa opção não existe)*
 
 ## Créditos
-    Desenvolvido por @weltonfelix
+    Desenvolvido por [@weltonfelix](https://github.com/weltonfelix)
