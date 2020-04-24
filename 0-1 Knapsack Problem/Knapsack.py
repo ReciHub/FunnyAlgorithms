@@ -34,8 +34,8 @@ def knapSack(weights, values, capacityWeight, n):
         return max(values[n-1] + knapSack(weights , values ,capacityWeight-weights[n-1], n-1), 
                    knapSack(weights , values,capacityWeight , n-1))
                    
-if __name__ == '__main__':
-    main();
+if __name__ == '__main__':   
+    main()
     values = [60, 100, 120] 
     weights = [10, 20, 30] 
     capacityWeight = 50
