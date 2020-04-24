@@ -21,7 +21,6 @@ def solve(item_num, max_weight, weights, vals):
                 dp[i][j] = dp[i-1][j]
 
     return dp[item_num][max_weight]
-  
 ''' Knapsack Problem '''
 
 def knapSack(weights, values, capacityWeight, n):
