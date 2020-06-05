@@ -1,0 +1,62 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+
+  // define variables
+  float cost;
+  float paid;
+  int num20B;
+  int num10B;
+  int num5B;
+  int num1B;
+  int quarters;
+  int changeCents;
+  int dimes;
+  int nickels;
+  int pennies;
+
+  // Prompt for and collect input
+  cout << "Enter the cost in dollars and cents: $";
+  cin >> cost;
+  cout << "Enter the amount paid in dollars and cents: $";
+  cin >> paid;
+  // convert to cents and compute change
+  changeCents = (paid - cost) * 100 + .001;
+  num20B = changeCents / 2000;
+  changeCents -= (num20B * 2000);
+
+  num10B = changeCents / 1000;
+  changeCents -= (num10B * 1000);
+
+  num5B = changeCents / 500;
+  changeCents -= (num5B * 500);
+
+  num1B = changeCents / 100;
+  changeCents -= (num1B * 100);
+
+  quarters = changeCents / 25;
+  changeCents -= (quarters * 25);
+
+  dimes = changeCents / 10;
+  changeCents -= (dimes * 10);
+
+  nickels = changeCents / 5;
+  changeCents -= (nickels * 5);
+
+  pennies = changeCents / 1;
+
+  // now display number of dollars and coins
+  cout << endl
+       << "Your change is:" << endl
+       << "  - twenty-dollar bills: " << num20B << endl
+       << "  - ten-dollar bills: " << num10B << endl
+       << "  - five-dollar bills: " << num5B << endl
+       << "  - one-dollar bills: " << num1B << endl
+       << "  - quarters: " << quarters << endl
+       << "  - dimes: " << dimes << endl
+       << "  - nickels: " << nickels << endl
+       << "  - pennies: " << pennies << endl;
+
+  return 0;
+}
