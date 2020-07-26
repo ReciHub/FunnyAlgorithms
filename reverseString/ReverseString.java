@@ -3,7 +3,7 @@ import java.io.*;
 import java.util.*; 
 
 
-// java program to reverse a input string
+// java program to reverse an input string
 
 public class ReverseString{
   public static void main(String[] args){
