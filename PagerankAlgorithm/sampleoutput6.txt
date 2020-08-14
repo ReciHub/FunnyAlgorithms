@@ -1,5 +1,0 @@
-facebook.com 0.24
-gmail.com 0.18
-google.com 0.12
-maps.com 0.24
-ufl.edu 0.24

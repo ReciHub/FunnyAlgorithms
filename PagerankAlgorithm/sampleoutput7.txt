@@ -1,6 +1,0 @@
-facebook.com 0.00
-gmail.com 0.01
-google.com 0.01
-maps.com 0.01
-quora.com 0.00
-ufl.edu 0.01

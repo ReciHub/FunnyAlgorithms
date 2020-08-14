@@ -1,1 +1,0 @@
-The algorithm must be able to transfer an image, such as a .png or base64 image and transform it into a grid with utf characters as pixels.

@@ -1,9 +1,0 @@
-[package]
-name = "guessing_game"
-version = "0.1.0"
-authors = ["DarkPhantom <l2kwstasl2@gmail.com>"]
-edition = "2018"
-
-[dependencies]
-
-rand = "0.7.2"
