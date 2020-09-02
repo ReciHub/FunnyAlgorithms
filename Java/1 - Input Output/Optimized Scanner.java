@@ -22,7 +22,7 @@ static class Scanner {
 		while (!st.hasMoreTokens()) {
 			String line = br.readLine();
 			if (line == null) return false;
-			if (line.equals("")) spaces = Math.max(spaces, 0) + 1;
+			if (line.isEmpty()) spaces = Math.max(spaces, 0) + 1;
 			st = new StringTokenizer(line);
 		}
 		return true;
