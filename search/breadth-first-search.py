@@ -1,7 +1,9 @@
+# Descricao do problema em https://www.thehuxley.com/problem/805?quizId=5243
+# Solucao por @OtacilioN
+
 ADJ = "adjacencias"
 DST = "distancia"
 ANT = "anterior"
-VST = "visitado"
 
 vertices, arestas, testes = map(int, input().split())
 grafo = {}
