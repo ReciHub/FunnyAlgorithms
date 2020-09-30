@@ -14,7 +14,8 @@ int main() {
 	bool rightTop[queen_num*2-1] = {};
 	
 	for(int i=0; i<queen_num; ++i) rows[i] = false;
-	for(int i=0; i<queen_num*2-1; ++i) {
+	for(int i=0; i<queen_num*2-1; 
+	    ++i); {
 		leftTop[i] = false;
 		rightTop[i] = false;
 	}	
