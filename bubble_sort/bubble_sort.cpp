@@ -12,13 +12,22 @@ void swap(int *xp, int *yp)
 // A function to implement bubble sort  
 void bubbleSort(int arr[], int n)  
 {  
-    int i, j;  
-    for (i = 0; i < n-1; i++)      
-      
-    // Last i elements are already in place  
-    for (j = 0; j < n-i-1; j++)  
-        if (arr[j] > arr[j+1])  
-            swap(&arr[j], &arr[j+1]);  
+   int i,j;
+   bool flag=false;
+    for(i=0;i<n-1;i++)
+    {
+      flag=false;
+      for(j=0;j<n-i-1;j++)
+      {
+        if(arr[j]>arr[j+1])
+        {
+          swap(&arr[j],&arr[j+1]);
+          flag=true;
+        }
+      }
+      if(flag==false)
+        break;
+    }
 }  
   
 /* Function to print an array */
