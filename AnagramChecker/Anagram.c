@@ -1,8 +1,8 @@
 #include<stdio.h>
 int check_for_anagram(char *a , char *b){
 	int i,j;
-    int h[26]={0};
-    for(i=0 ; a[i]!='\0';i++){
+	int h[26]={0};
+	for(i=0 ; a[i]!='\0';i++){
 		j = a[i]-97;
 		h[j]= h[j]+1;
 	}
@@ -20,7 +20,7 @@ int check_for_anagram(char *a , char *b){
 }
 int main(){
 	char *a = "medical";
-    char *b = "decimal";
+	char *b = "decimal";
 	check_for_anagram(a,b);
 	return 0;
 }
