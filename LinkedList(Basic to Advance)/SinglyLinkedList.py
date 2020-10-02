@@ -7,6 +7,8 @@ class SinglyLinkedList:
     def __init__(self):
         self.head = None
 
+    # Inserts a new element at the head of the SLL i.e. changes the head
+    # Time complexity: O(1)
     def insert_begin(self, data):
         cur_head = self.head
         new_head = Node(data)
@@ -15,6 +17,8 @@ class SinglyLinkedList:
         self.head = new_head
         print("Element Inserted")
 
+    # Inserts an element at the end of the SLL
+    # Time Complexity: O(N)
     def insert_end(self, data):
         temp = self.head
         new_node = Node(data)
@@ -25,6 +29,8 @@ class SinglyLinkedList:
         temp.next = new_node
         print("Element inserted")
 
+    # Inserts a new element before a given element
+    #Time Complexity: O(N)
     def insert_before(self, data, ref):
         temp = self.head
         new_node = Node(data)
@@ -49,6 +55,8 @@ class SinglyLinkedList:
         temp.next = new_node
         print("Element inserted")
 
+    # Inserts a new element after a given element
+    # Time Complexity: O(N)
     def insert_after(self, data, ref):
         temp = self.head
         new_node = Node(data)
@@ -69,10 +77,14 @@ class SinglyLinkedList:
         temp.next = new_node
         print("Element inserted")
 
+    # Deletes the head of the SLL and assigns the next element as head
+    # Time Complexity: O(1)
     def delete_head(self):
         self.head = self.head.next
         print("Element deleted")
 
+    # Deletes the last element of the SLL
+    # Time Complexity: O(N)
     def delete_end(self):
         temp = self.head
         while temp.next.next != None:
@@ -80,6 +92,8 @@ class SinglyLinkedList:
         temp.next = None
         print("Element deleted")
 
+    # Deletes a given element from the SLL
+    # Time Complexity: O(N)
     def delete_element(self,ele):
         temp = self.head
 
@@ -102,6 +116,8 @@ class SinglyLinkedList:
         temp.next = to_be_deleted.next
         print("Element deleted")
 
+    # Returns the 1st occurrence of the given element in the SLL
+    # Time Complexity: O(N)
     def search_element(self,ele):
         temp = self.head
         i = 1
@@ -120,6 +136,8 @@ class SinglyLinkedList:
 
         return i
 
+    # Reverses the SLL
+    # Time Complexity: O(N)
     def reverse_sll(self):
         cur = self.head
         prev = None
@@ -133,6 +151,8 @@ class SinglyLinkedList:
         self.head = prev
         print("SLL is revrsed")
 
+    # Prints all the elements in the SLL
+    # Time Complexity: O(N)
     def print_sll(self):
         temp = self.head
 
@@ -142,6 +162,8 @@ class SinglyLinkedList:
 
         print(temp.data)
 
+# Creates and returns the head of a new SLL
+# Time Complexity: O(1)
 def create_linked_list(data):
     sll = SinglyLinkedList()
     sll.head = Node(data)
