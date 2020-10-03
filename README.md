@@ -1,10 +1,8 @@
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-
 # Funny Algorithms
 
 _A repository with a bunch of funny algorithms, beginners friendly :sparkles:_
 
-_Dont forget to read our [Contributing Guide](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CODE_OF_CONDUCT.md)_
+_Don't forget to read our [Contributing Guide](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CODE_OF_CONDUCT.md)_
 
 ## Algorithms are fun, right?
 

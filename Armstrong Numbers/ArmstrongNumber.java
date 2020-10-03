@@ -4,11 +4,12 @@ class ArmstrongNumber
 {
    public static void main(String args[])
    {
-      int n, sum = 0, temp, remainder, digits = 0;
+      int sum = 0, temp, remainder, digits = 0;
  
-      Scanner in = new Scanner(System.in);
+      InputStreamReader reader = new InputStreamReader(System.in);
+    BufferedReader br = new BufferedReader(reader);
       System.out.println("Input a number to check if it is an Armstrong number");      
-      n = in.nextInt();
+      String n = Integer.parseInt();
  
       temp = n;
      
