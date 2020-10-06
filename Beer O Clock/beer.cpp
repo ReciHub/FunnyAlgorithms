@@ -3,24 +3,21 @@ Beer O Clock in C++
 */
 
 #include <iostream>
-#include <string>
-
+using namespace std;
 void beer();
-
 int main() {
 	beer();
 	return 0;
 }
-
 void beer() {
-	std::string ip;
-	std::cout << "> Should I check if it is time to have Beer ? (Y / N) ";
-	std::cin >> ip;
+	char ip;
+	cout << "> Should I check if it is time to have Beer ? (Y / N) ";
+	cin >>ip;
 
-	if (ip == "N" || ip == "n")
-		std::cout << "> We check later" << std::endl;
-	else if (ip == "Y" || ip == "y")
-		std::cout << "> It always is beer of clock. Cheers !!!" << std::endl;
+	if (ip =='N' ||ip== 'n')
+		cout << "> We check later" <<endl;
+	else if (ip == 'Y' || ip == 'y')
+		cout << "> It always is beer of clock. Cheers !!!" <<endl;
 	else
-		std::cout << "> Invalid input, try again." << std::endl;
+		cout << "> Invalid input, try again." <<endl;
 }
