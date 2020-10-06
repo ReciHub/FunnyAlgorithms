@@ -1,3 +1,4 @@
+import string
 #morse code dict
 morse = {
         "a": ".-",
