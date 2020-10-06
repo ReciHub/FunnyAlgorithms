@@ -1,5 +1,3 @@
-[![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
-
 # Funny Algorithms
 
 _A repository with a bunch of funny algorithms, beginners friendly :sparkles:_

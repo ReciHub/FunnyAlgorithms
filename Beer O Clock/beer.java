@@ -14,13 +14,13 @@ class Beer {
     System.out.println("> Should I check if it is time to have Beer ? (Y / N)");
     char ans = sc.next().charAt(0);
       
-      // answer if yes
+      // answer if no
       if (ans == 78 || ans == 110) {
         System.out.println("> We check later");
         valid = true;
       }
       
-      // answer if no
+      // answer if yes
       else if (ans == 89 || ans == 121) {
         System.out.println("> It always is beer of clock. Cheers !!!");
         valid = true;
