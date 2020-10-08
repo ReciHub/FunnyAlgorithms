@@ -8,7 +8,8 @@
    <img src="https://img.shields.io/github/stars/ReciHub/FunnyAlgorithms?color=green">
    <img src="https://komarev.com/ghpvc/?username=ReciHub&color=blue">
 </p>
-# Funny Algorithms
+
+## Funny Algorithms
 
 _A repository with a bunch of funny algorithms, beginners friendly :sparkles:_
 
