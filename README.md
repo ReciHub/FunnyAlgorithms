@@ -28,9 +28,13 @@ It is always fun to check new algorithms or see how the same algorithms can be r
 
 ## Submit a pull request
 
-After adding your funny algorithm share with us making a [pull request](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CONTRIBUTING.md#submitting-a-pull-request) so people can see how amazing is your algorithm
+After adding your funny algorithm share with us making a [pull request](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CONTRIBUTING.md#submitting-a-pull-request) so people can see how amazing is your algorithm.
+   - To submit a pull request, write a `Title` , `Leave a Comment` and click the `Create Pull Request`button. That's all. 
+
+<img src="assets/img/Create_Pull_Request.png" alt="Submit a pool request">
 
 ## Enjoyed? 
 
 Leave a :star: to the repository and share this with your friends!
-<img src="" alt="star the repo">
+
+<img src="assets/img/github_star.png" alt="star the repo">
