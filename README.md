@@ -1,3 +1,13 @@
+
+<!-- <img align="center" height=80% width=80% src="https://hacktoberfest.digitalocean.com/assets/HF-full-logo-b05d5eb32b3f3ecc9b2240526104cf4da3187b8b61963dd9042fdc2536e4a76c.svg" alt="hacktoberfest-2020"> -->
+
+<p align="center">
+   <img src="https://img.shields.io/badge/author-OtacilioN-orange">
+   <img src="https://img.shields.io/github/issues/ReciHub/FunnyAlgorithms"> 
+   <img src="https://img.shields.io/github/forks/ReciHub/FunnyAlgorithms">
+   <img src="https://img.shields.io/github/stars/ReciHub/FunnyAlgorithms?color=green">
+   <img src="https://komarev.com/ghpvc/?username=ReciHub&color=blue">
+</p>
 # Funny Algorithms
 
 _A repository with a bunch of funny algorithms, beginners friendly :sparkles:_
@@ -22,3 +32,4 @@ After adding your funny algorithm share with us making a [pull request](https://
 ## Enjoyed? 
 
 Leave a :star: to the repository and share this with your friends!
+<img src="" alt="star the repo">
