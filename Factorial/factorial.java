@@ -21,9 +21,10 @@ public class Main {
     }
 
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+       InputStreamReader reader = new InputStreamReader(System.in);
+        BufferedReadLine br = new BufferedReadLine(reader);
         System.out.println("Enter a number to factorialize: ");
-        String input = scanner.nextLine();
+        int input = Integer.parseInt();
 
         if(isInteger(input)){
             try{

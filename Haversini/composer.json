@@ -1,0 +1,16 @@
+{
+    "name": "douglas/haversini",
+    "description": "calcule a distância entre dois pontos usando latitude e longitude.",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Douglas Willamis",
+            "email": "douglaswillamis@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "Haversini\\": "src/"
+    }
+}
