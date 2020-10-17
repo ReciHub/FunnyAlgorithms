@@ -3,6 +3,7 @@ import os
 import sys
 
 def instructions():
+    #Instructions to play TicTacToe
     os.system('cls')
     print("TIC-TAC-TOE \n                 ")
     print("Instructions To Play           ")
@@ -12,10 +13,10 @@ def instructions():
     print("To Restart: Spacebar and Enter ")
     print("To Play: Use Digits 1 to 9 and Press Enter")
 
-
 board = [" "," "," "," "," "," "," "," "," "]
 
 def draw_board(board):
+    #draw empty board
     
     def one_box(k,board,n):
         v1 = '  |'+str(n)+'      |'+str(n+1)+'      |'+str(n+2)+'      |'
@@ -64,6 +65,7 @@ def draw_mark(p,t,board): #p for position, t for player(i)
 
 enter_count = 0
 
+#To check if win is horizontal
 def win_h(m):
     global enter_count
     if board[m]==board[m+1]==board[m+2]:
@@ -75,7 +77,8 @@ def win_h(m):
             print("Player 2 wins")
             print("Press Spacebar to Continue")
             enter_count+=1
-                
+            
+#To check if win is vertical                
 def win_v(m):
     global enter_count
     if board[m]==board[m+3]==board[m+6]:
@@ -87,7 +90,8 @@ def win_v(m):
             print("Player 2 wins")
             print("Press Spacebar to Continue")
             enter_count+=1
-
+            
+#To check if win is in 1st diagonal 
 def win_d1(m):
     global enter_count
     if board[m]==board[m+4]==board[m+8]:
@@ -99,7 +103,8 @@ def win_d1(m):
             print("Player 2 wins")
             print("Press Spacebar to Continue")
             enter_count+=1
-            
+
+#To check if win is in 2nd diagonal 
 def win_d2(m):
     global enter_count
     if board[m]==board[m+2]==board[m+4]:
@@ -111,16 +116,13 @@ def win_d2(m):
             print("Player 2 wins")
             print("Press Spacebar to Continue")
             enter_count+=1
-    elif flag==9:
+    elif flag==9 and enter_count==0:
         print("Match Draw")
         print("Press Spacebar to Restart")
-
 
 instructions()
 print("\nPlayer 1")
 draw_board(board)
-
-#position = input("Enter Position:")
 
 while True:
     
@@ -142,39 +144,43 @@ while True:
     elif enter_count!=1:
         if position == '7' :
             draw_mark(0,i,board)
-            flag2 = 70
+
         elif position == '8':
             draw_mark(1,i,board)
-            flag2 = 80
+
         elif position == '9':
             draw_mark(2,i,board)
-            flag2 = 90
+
         elif position == '4':
             draw_mark(3,i,board)
-            flag2 = 40
+
         elif position == '5':
             draw_mark(4,i,board)
-            flag2 = 50
+
         elif position == '6':
             draw_mark(5,i,board)
-            flag2 = 60
+
         elif position =='1':
             draw_mark(6,i,board)
-            flag2 = 10
+
         elif position == '2':
             draw_mark(7,i,board)
-            flag2 = 20
+
         elif position == '3':
             draw_mark(8,i,board)
-            flag2 = 30
-        
 
+        
+        #check for all 3 horizontal rows
         win_h(0)
         win_h(3)
         win_h(6)
+        
+        #check for all 3 vertical columns
         win_v(0)
         win_v(1)
         win_v(2)
+        
+        #check for diagonals
         win_d1(0)
         win_d2(2)
     
