@@ -139,6 +139,8 @@ public class kruskal {
 }
 
 /*
+SAMPLE INPUT:
+
 ENTER NUMBER OF VERTICES(OFFICES)
 6
 ENTER NUMBER OF EDGES(ROUTES)
@@ -215,19 +217,4 @@ ENTER (TO)EDGE FOR EDGE
 2
 ENTER THE COST 
 2
-  1 2 3 4 5 6  
-_________________________
-1| 0 2 0 1 4 0  
-2| 2 0 3 3 0 7  
-3| 0 3 0 5 0 8  
-4| 1 3 5 0 9 0  
-5| 4 0 0 9 0 0  
-6| 0 7 8 0 0 0  
- 
-EDGE 0:(1, 4) COST:1 
-EDGE 1:(1, 2) COST:2 
-EDGE 2:(2, 3) COST:3 
-EDGE 3:(1, 5) COST:4 
-EDGE 4:(2, 6) COST:7 
-MINIMUM COST=  17
 */
