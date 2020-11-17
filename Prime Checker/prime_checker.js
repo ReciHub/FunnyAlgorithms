@@ -2,12 +2,11 @@ function isPrime(number) {
   //to be a prime it must be divided only by himself or by 1
 
   //1 is not a prime
-  if (number == 1) {
+  if (number === 1) {
     return false;
-  }
-  else {
+  } else {
     for (let i = 2; i < number; i++) {
-      if (number % i == 0){
+      if (number % i === 0) {
         return false;
       }
     }
