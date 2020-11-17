@@ -1,40 +1,19 @@
 import java.util.Scanner;
-/*This a example of Factorization*/
-public class Main {
-    public static long factorial(int n){
-        long accumulator = 1;
+class Factorial{
 
-        for(; n > 0; n--){
-            accumulator *= n;
-        }
-
-        return accumulator;
+  public static void main(String[] args){
+  
+    Scanner s=new Scanner(System.in);
+    System.out.println("Enter a non negative number");
+    int n=s.nextInt();
+    int fact=1;
+    if(n==0 || n==1){
+      fact=1;
+    }else{
+    
+      for(int i=2;i<=n;i++)
+      fact*=i;
     }
-
-    public static boolean isInteger(String text){
-        try{
-            Integer.parseInt(text);
-            return true;
-        }catch(Exception e){
-            return false;
-        }
-    }
-
-    public static void main(String[] args){
-       InputStreamReader reader = new InputStreamReader(System.in);
-        BufferedReadLine br = new BufferedReadLine(reader);
-        System.out.println("Enter a number to factorialize: ");
-        int input = Integer.parseInt();
-
-        if(isInteger(input)){
-            try{
-                int num = Integer.parseInt(input);
-                System.out.println("The factorial of " + num + " is " + factorial(num));
-            }catch(NumberFormatException e){
-                System.out.println("What happened there ?");
-            }
-        }else {
-            System.out.println("The input was not a number");
-        }
-    }
+    System.out.println("Factorial of the number is "+fact);
+  }
 }
