@@ -30,8 +30,18 @@ while game_in_progress:
             if cheese_choice == 1:
                 print("Nope. You're weird.")
             elif cheese_choice == 2:
-                print("You made it! Congratulations, you're not weird.")
-            game_in_progress = False
+                print("OK... you are still normal...")
+                print("Do you do you scrunch or fold your toilet paper?")
+                print("(Type in '1' for the first option or '2' for the second one)")
+
+                toilet_paper_choice = int(input())
+                
+                if toilet_paper_choice == 1:
+                print("Nope. You're weird.")
+
+                elif toilet_paper_choice == 2:
+                    print("You made it! Congratulations, you're not weird.")
+                game_in_progress = False
 
     else:
         print("Invalid Input. Restart")
