@@ -13,4 +13,5 @@ The anagram algorithm is a simple algorithm that given two strings you need to c
 ## References
 
  [1] "anagram". CollinsDictionary.com. HarperCollins Publishers. Retrieved 22 September 2017.
+ 
  [2] Anagrammatist, Dictionary.com. Retrieved on 12 August 2008.
