@@ -1,8 +1,7 @@
 #print a fraction in Egyptian Form Greedy
 from typing import Match
-
-
 import math
+
 def egyptianFraction(nr, dr):
     print("The Egyptian Fraction" + "Form of {0}/{1} is". format(nr, dr), end="\n")
 
@@ -20,5 +19,5 @@ def egyptianFraction(nr, dr):
             else:
                 print(" 1/{0}" .format(ef[i]), end=" ")
     
-    #calling the function
-    egyptianFraction(6, 14)
+#calling the function
+egyptianFraction(6, 14)
