@@ -1,23 +1,21 @@
-import  java.util.Scanner;
-class BinarySearch
+import java.util.Scanner;
+public class BinarySearch
 {
-    int binarySearch(int[] num, int left, int right, int x)
-    {
+    public static int binarySearch(final int[] num, final int left, int right, int x) {
         int mid;
-       right = num.length;
-       if(right>1) {
-           mid = (left + right) / 2;
-       if(num[mid] == x)
-           return mid;
-       if(num[mid]>x)
-           return binarySearch(num, left, right - 1, x);
-       if(num[mid]<x)
-           return binarySearch(num,mid+1,right,x);
-       }
-       return -1;
+        right = num.length;
+        if(right>1) {
+            mid = (left + right) / 2;
+            if(num[mid] == x)
+               return mid;
+            if(num[mid]>x)
+                return binarySearch(num, left, right - 1, x);
+            if(num[mid]<x)
+                return binarySearch(num,mid+1,right,x);
+        }
+        return -1;
     }
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         BinarySearch b = new BinarySearch();
         System.out.println("Enter the number to be searched: ");
         Scanner sc = new Scanner(System.in);
@@ -35,8 +33,7 @@ class BinarySearch
         {
             System.out.println("Element not present in array");
         }
-        else
-        {
+        else {
             System.out.println("Element present in array at: " + result);
         }
     }
