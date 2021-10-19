@@ -1,8 +1,8 @@
-def fibo(n):
-	if n==0 or n==1:
-		return 1
-	else:
-		return fibo(n-1) + fibo(n-2)
+def fibonacci(number):
+    if number <= 1:
+        return 1
+    return fibonacci(number - 1) + fibonacci(number - 2)
 
-n = int(input("Enter n:"))
-print(fibo(n))
+digit = int(input("Enter a position in the Fibonacci sequence: "))
+
+print(fibonacci(digit))
