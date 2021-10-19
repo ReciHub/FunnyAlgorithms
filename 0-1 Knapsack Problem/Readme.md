@@ -12,4 +12,4 @@ The knapsack problem has been studied for more than a century, with early works 
 [2] Dantzig, Tobias. Numbers: The Language of Science, 1930
 
 
-See more about Knapsack Problem: https://en.wikipedia.org/wiki/Knapsack_problem
+See more about the Knapsack Problem: https://en.wikipedia.org/wiki/Knapsack_problem
