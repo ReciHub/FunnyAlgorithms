@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Poly Generator</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<!-- <link type="text/css" rel="stylesheet" href="main.css"> -->
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+			*{
+				margin: 0;
+				font-family: Roboto;
+			}
+			button{
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+			}
+			.container{
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				
+			}
+
+			main{
+				width: 80%;
+				height: 50%;
+				justify-content: space-evenly;
+				display: flex;
+			}
+
+			#userAcessable{
+				display: flex;
+    			flex-direction: column;
+    			align-items: center;
+			}
+
+			.marginBottom{
+				margin-bottom: 1rem;
+			}
+
+			.label{
+				font-size: 1.5rem;
+			}
+			.polyButtons{
+				background-color: lightsalmon;
+				width: 3.5rem;
+				height: 3.5rem;
+				text-align: center;
+				transition: all 400ms;
+			}
+
+			.polyButtons:hover, #polyGeneratorButton:hover{
+				transform: scale(1.1);
+			}
+
+			.active{
+				background-color: greenyellow;
+			}
+
+			#polyGeneratorButton {
+				background-color: rgb(0, 60, 255);
+				width: 15rem;
+				height: 3rem;
+				color: aliceblue;
+				font-size: 2rem;
+				font-weight: 700;
+				transition: all 400ms;
+				margin-bottom: 2rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<main>
+				<div id="rendererWrapper"></div>
+			<div id="userAcessable">
+				<div class="inputHolder marginBottom">
+					<h3 class="label">Select a texture</h3>
+					<input type="file" src="" alt="" id="textureInput">
+				</div>
+				
+
+				<div id="polyButtonsContainer" class="marginBottom">
+					<h3 class="label">Select a geometry</h3>
+					<button class="polyButtons" id="cone">cone</button>
+					<button class="polyButtons" id="cube">cube</button>
+					<button class="polyButtons" id="cylinder">cylinder</button>
+					<button class="polyButtons" id="torus">torus</button>
+					<button class="polyButtons" id="sphere">sphere</button>
+				</div>
+				<button id="polyGeneratorButton">Generate</button>
+			</div>
+			</main>
+			
+			
+		</div>
+		
+
+        <script src="https://threejs.org/build/three.js"></script>
+		<script>
+			let camera, scene, light, renderer;
+
+			const textureInput = document.querySelector("#textureInput");
+			let imageTexture, object3D;
+			textureInput.addEventListener("change", () => {
+				const file = textureInput.files[0];
+
+					if(file) {
+						const reader = new FileReader();
+
+						reader.addEventListener("load", () => {
+							imageTexture = reader.result;
+						})
+
+						reader.readAsDataURL(file);
+					}
+				})
+			
+			let mouseX = 0, mouseY = 0;
+            const loader = new THREE.TextureLoader();
+
+			function addGeometry() {
+				let type = "cone";
+				let texture = "https://cdn.pixabay.com/photo/2016/01/08/19/51/barack-obama-1129156_960_720.jpg";
+				if(imageTexture) {
+					texture = imageTexture;
+				}
+				if(document.querySelector('.active') !== null) {
+					type = document.querySelector('.active').getAttribute('id');
+				}
+                let geometry, material;
+				
+                material = new THREE.MeshBasicMaterial({
+    				map: loader.load(texture),
+  				});
+
+
+				removeGeometry();
+                switch(type) {
+                    case "cone":
+                    geometry = new THREE.ConeGeometry(150,250,3);
+                    break;
+                    case "cube":
+                    geometry = new THREE.BoxGeometry( 200, 200, 200 );
+                    break;
+                    case "cylinder":
+                    geometry = new THREE.CylinderGeometry( 100, 100, 200, 32, 1 ); //radius top, radius bottom, height, radius segments
+                    break;
+                    case "torus":
+                    geometry = new THREE.TorusGeometry( 120, 40, 16, 100 );
+                    break;
+                    case "sphere":
+                    geometry = new THREE.SphereGeometry( 100, 32, 90 );
+                    break;
+                    
+                }
+				object3D = new THREE.Mesh(geometry, material)
+				scene.add(object3D);
+			}
+
+			function removeGeometry() {
+				for ( let i = 0; i < scene.children.length; i ++ ) {
+
+					const child = scene.children[ i ];
+
+					if ( child.isMesh || child.isPoints ) {
+
+						child.geometry.dispose();
+						scene.remove( child );
+						i --;
+
+					}
+
+				}
+			}
+            
+			function toggleClass(className, buttonId) {
+				let polyButtons = document.querySelectorAll(`.${className}`);
+				for (const button of polyButtons) {
+					button.classList.remove(className);
+				}
+				document.querySelector(`#${buttonId}`).classList.add(className);
+			}
+            
+			function init() {
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth / 2, window.innerHeight / 2);
+				document.querySelector("#rendererWrapper").appendChild( renderer.domElement );
+
+				camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 100, 500 );
+				
+				camera.position.set( 0, 0, 400 );
+
+				scene = new THREE.Scene();
+
+				light = new THREE.DirectionalLight( 0xffffff );
+				scene.add( light );
+
+				addGeometry("cone");
+
+				document.getElementById( 'cone' ).addEventListener( 'click', function () {
+					toggleClass("active", "cone"); 
+
+				} );
+				document.getElementById( 'cube' ).addEventListener( 'click', function () {
+					toggleClass("active", "cube");          
+
+				} );
+				document.getElementById( 'cylinder' ).addEventListener( 'click', function () {
+					toggleClass("active", "cylinder");
+
+				} );
+				document.getElementById( 'torus' ).addEventListener( 'click', function () {
+					toggleClass("active", "torus");
+
+				} );
+				document.getElementById( 'sphere' ).addEventListener( 'click', function () {
+					toggleClass("active", "sphere");
+
+				} );
+
+				document.getElementById( 'polyGeneratorButton' ).addEventListener( 'click', function () {
+					addGeometry();
+				} );
+
+			}
+
+			function animate () {
+				requestAnimationFrame( animate );
+				object3D.rotation.y += 0.01;
+				object3D.rotation.z += 0.01;
+				renderer.render( scene, camera );
+			};
+
+			init();
+			animate();
+		</script>
+
+	</body>
+</html>
