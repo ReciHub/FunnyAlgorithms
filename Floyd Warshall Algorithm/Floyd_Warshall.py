@@ -1,4 +1,4 @@
-//Floyd-Warshall shortest path algorithm in python
+# Floyd-Warshall shortest path algorithm in python
 
 class Edge:
     def __init__(self, start, end, weight):
