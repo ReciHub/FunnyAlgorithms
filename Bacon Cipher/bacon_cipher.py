@@ -1,5 +1,5 @@
 # The key of Bacon cipher
-# here we are usig the 26 key cipher and not the 24 where i,j and u,v have same keys
+# here we are using the 26 key cipher and not the 24 where i,j and u,v have same keys
 cipher_key = {'A':'aaaaa', 'B':'aaaab', 'C':'aaaba', 'D':'aaabb', 'E':'aabaa',
         'F':'aabab', 'G':'aabba', 'H':'aabbb', 'I':'abaaa', 'J':'abaab',
         'K':'ababa', 'L':'ababb', 'M':'abbaa', 'N':'abbab', 'O':'abbba',
