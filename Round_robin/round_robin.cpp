@@ -1,4 +1,4 @@
-include<iostream> 
+#include <iostream> 
 using namespace std; 
 
 void findWaitingTime(int processes[], int n, int bt[], int wt[], int quantum) 
