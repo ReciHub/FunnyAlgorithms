@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.IntStream;
@@ -50,4 +51,26 @@ public class pickACard {
 		}
 	
 	}
+=======
+public class pickACard {
+    public static void main(String args[]) {
+        
+     String[] values = {"A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"};
+     String[] suits = {"\u2663", "\u2665", "\u2666", "\u2660"};
+    //#club = "\u2663"
+    //#heart = "\u2665"
+    //#diamond = "\u2666"
+    //#spade = "\u2660"
+    
+    
+    int valueIndex = (int)(Math.random()*13);
+    int suitIndex = (int)(Math.random()*4);
+    
+    String cardValue = values[valueIndex];
+    String cardSuits = suits[suitIndex];
+    
+    System.out.println(""+cardValue+" "+cardSuits);
+    
+    }
+>>>>>>> 26a0f42abca5e400b2d5113e4b1f7c74e35f076d
 }
