@@ -1,3 +1,6 @@
+import webbrowser
+import time
+
 VALID_YES_RESPONSES = [
     "y",
     "yes",
@@ -19,7 +22,9 @@ def print_ok():
 
 def print_not_ok():
     print(":(")
-    print("Hope you get better my friend")
+    print("Hope you get better my friend, help is on it's way...")
+    time.sleep(3)
+    webbrowser.open('https://giphy.com/search/puppy')
 
 def print_definitely_not_ok():
     print("You're definitely not ok.")
