@@ -20,3 +20,4 @@ n=int(input("Enter the length/breadth of the chessboard: "))
 position=[int(i) for i in input("Enter the x and y position of the queen (1-indexed base): ").split()]
 output=queensreach(n,position)
 print("The queen could cover:",output,"blocks")
+
