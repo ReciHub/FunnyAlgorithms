@@ -1,3 +1,8 @@
+/*
+  Algorithm for various operation on matrix such as addition, subtraction and transpose. 
+  Seperate functions for operation implementing iterating througout the matrix using two loops for indices.
+*/
+
 #include<stdio.h>
 #include<stdlib.h>
 
