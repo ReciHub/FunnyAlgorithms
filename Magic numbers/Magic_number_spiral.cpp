@@ -12,11 +12,11 @@ int main()
     printf("ROWS : ");     
     scanf("%lld",&i);     // Getting the input from the user 
 
-    j = i;
+    j = i;  // To create a square table 
 
-    long long space = i>=j ? i : j;
+    long long space = i>=j ? i : j;     // choosing between maximum element
 
-    space = space*space;
+    space = space*space;  // maximum element of the table
 
     printf("\n");
 
@@ -26,14 +26,15 @@ int main()
         {
             if(y==1) printf(" ");
 
+/******************************* Formula to create number spiral pattern ********************/
             max = x>=y ? x : y;
-            sq = max*max-(max-1);
+            sq = max*max-(max-1);    
 
             if(max==x)
             {
                 if(x%2==0)
                 {
-                    num = sq+(x-y);
+                    num = sq+(x-y);      
                 }
 
                 if(x%2!=0)
@@ -55,12 +56,14 @@ int main()
                 }
             }
 
-            int num_space = log10(num);      // Algo to automate the spacing respective to the maximum element
-            int space_space = log10(space);
+/**************************************************************************************/
+
+            int num_space = log10(num);      // Assign the number of digits in this element
+            int space_space = log10(space);     // Assign the number of digits in maximum element
 
             printf("%lld",num);
 
-            for(int s=0;s<=(space_space-num_space);s++) { printf(" ");  }   
+            for(int s=0;s<=(space_space-num_space);s++) { printf(" ");  }      // printing the space before the element to beautify the code
 
             }
 
