@@ -1,10 +1,9 @@
--- Inplementation of a fibonacci sequence in Haskell
--- Calculating the nth number in the sequence
-fibonacci :: Integer -> Integer
-fibonacci 0 = 0
-fibonacci 1 = 1
-fibonacci n = fibonacci (n-1) + fibonacci (n-2)
-
--- Generating the first n numbers in the sequence
-fibseq :: Integer -> [Integer]
-fibseq n = [fibonacci x | x <- [1..n]]
+-- Luis L Reyes
+-- fibonacci function takes in the nth number
+-- of the sequence you want where sequence
+-- is 1 while n = 0 or 1
+module Fibonacci where
+    fibonacci :: Integer -> Integer
+    fibonacci 0 = 1
+    fibonacci 1 = 1
+    fibonacci n = (fibonacci (n-1)) + (fibonacci(n-2));
