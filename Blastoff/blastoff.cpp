@@ -15,7 +15,7 @@ int main()
     cout << endl << endl;
     
     cout << "After Blasting: ";
-    for(int i=1;i<=n;i++) cout << n-i+1 <<' ';   //Accessing elements from the last of the loop
+    for(int i=1;i<=n;i++) cout << n-i+1 <<' ';   // Accessing elements from the last of the loop
     
     
 
