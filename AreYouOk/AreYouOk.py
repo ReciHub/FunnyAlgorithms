@@ -60,12 +60,12 @@ def main():
         except:
             for loop in range (2):
                 print("...")
-            print("oh dear god what is that")
+            print("That isn't a valid response, please try again.")
             print()
 
 def help():
     print("Oh, hey there, are u ok buddy?")
-    is_okay_response = input()
+    is_okay_response = input(">>> ")
     if is_okay_response in QUIT_REQUEST_RESPONSES:
         print("okay, exiting the program", end='')
         for loop in range(3):
@@ -78,7 +78,7 @@ def help():
     elif is_okay_response in VALID_YES_RESPONSES:
         print("Really? oh that's great")
         print("Hey have you ever searched for 'sea doggos' videos?")
-        has_searched_response = input()
+        has_searched_response = input(">>> ")
         if has_searched_response in VALID_NO_RESPONSES:
             print_definitely_not_ok()
             time.sleep(15)
