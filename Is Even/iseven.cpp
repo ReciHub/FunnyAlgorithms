@@ -1,16 +1,15 @@
-#include <iostream>
+#include<iostream>
+
 using namespace std;
 
-int main(){
-
-    int test_no;
-    cin >> test_no;
-
-    if(test_no%2==0){
-        cout << "is even" << endl;
-    }else{
-        cout << "is odd" << endl;
-    }
-
+int main()
+{
+    int x;
+    cout<<"Enter any number -> ";
+    cin>>x;
+    if(x%2==0)
+        cout<<"Number is even\n";
+    else
+        cout<<"Number is odd\n";
     return 0;
 }
