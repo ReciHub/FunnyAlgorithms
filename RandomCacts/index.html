@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Cacts</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <header>
+                <h1><span>R</span>andom <span>C</span>act</h1>
+            </header>
+            <main>
+                <div id="factContainer">
+                    <p id="fact"></p>
+                </div>
+                <div id="buttonWrapper">
+                    <button id="random-fact-button">
+                        Random
+                    </button>
+                </div>
+            </main>
+            <footer>
+                by: <a href="https://github.com/h3nrey" target="_blank" rel="noopener noreferrer">h3nrey</a>
+            </footer>
+            
+        </div>
+    </div>
+    <script>
+        const randomButtons = document.querySelector("#random-fact-button");
+        randomButtons.addEventListener('click', () => {
+            getContent()
+        })
+
+        async function getContent() {
+            try {
+                const response = await fetch("https://catfact.ninja/fact");
+                const data = await response.json();
+                showFact(data.fact)
+            } catch(error) {
+                console.error(error);
+            }
+        }
+
+        getContent();
+
+        function showFact(fact) {
+            document.querySelector('#fact').innerHTML = fact;
+        }
+        
+    </script>
+</body>
+</html>
