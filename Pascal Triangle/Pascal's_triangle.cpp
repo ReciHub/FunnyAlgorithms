@@ -1,6 +1,6 @@
 class Solution {
 public:
-    vector<vector<int>> generate(int numRows) {
+    vector<vector<int>> generate_pascal_triangle(int numRows) {
         vector<vector<int>> res;
         for(int i=1;i<=numRows;i++){
             vector<int> v = vector<int> (i, 1);
