@@ -11,5 +11,8 @@ def factorial_recursion(n):
         return n * factorial_recursion(n-1)
 
 number = int(input("Enter a number: "))
-print("Factorial using Recursion: ", factorial_recursion(number))
-print("Factorial using Iterative approach: ", factorial(number))
+if num < 0:
+    print("Sorry, Factorial does not exist for negative numbers")
+else:
+    print("Factorial using Recursive Approach: ", factorial_recursion(number))
+    print("Factorial using Iterative Approach: ", factorial(number))
