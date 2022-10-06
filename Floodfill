@@ -1,0 +1,21 @@
+class Solution {
+public:
+    void fillcolor(int i,int j,int cur,int c,vector<vector<int>>& image){
+        if(i<0 || j<0 || i>=image.size() || j>=image[0].size()) //checking the boundry of i and j.
+            return;
+        if(image[i][j]==cur){
+            image[i][j]=c; //if the current color is different change to new color.
+            fillcolor(i+1,j,cur,c,image); //Check the above row
+            fillcolor(i-1,j,cur,c,image); //check below row
+            fillcolor(i,j+1,cur,c,image); //check next coloumn
+            fillcolor(i,j-1,cur,c,image); //check previous coloumn
+        }
+    }
+    
+    vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
+        int cur=image[sr][sc];
+        if(cur!=color) //Check if the current color is same or not
+            fillcolor(sr,sc,cur,color,image); //if current color is different we perform flood flil
+        return image;
+    }
+};
