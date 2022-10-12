@@ -1,5 +1,5 @@
 
-//We are given rod and we need to cut the rod until we left with no size  according to the prices associated with the index of he rod at which we are making cut.
+//We are given rod and we need to cut the rod until we left with no size  according to the prices associated with the index of the rod at which we are making cut.
 
 // Our task is to maximize the cut  price
 
