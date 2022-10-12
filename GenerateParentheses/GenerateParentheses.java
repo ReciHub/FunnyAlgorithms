@@ -1,4 +1,4 @@
-package GenerateParanthesis;
+package FunnyAlgorithms.GenerateParentheses;
 
 import java.util.*;
 
