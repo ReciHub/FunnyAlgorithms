@@ -14,7 +14,7 @@ int main()
 {
    int m, n;
    cin >> m >> n;
-   cout << gcd(m, n)
+   cout << gcd(m, n);
    
    return 0;
 }
