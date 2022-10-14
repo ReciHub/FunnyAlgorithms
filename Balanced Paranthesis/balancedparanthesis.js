@@ -1,12 +1,18 @@
  function balanced_paranthesis( brackets ){
  
-let count=0;
+let count = 0;
    
    for(let i = 0 ; i < brackets.length ; ++i)
 
-if( brackets[i] === ')' ) count-- ;
+       if( brackets[i] === ')' ) 
+    { 
+    count-- ;
+      }
    
-else count++;
+      else 
+     {
+      count++ ;
+        }
 
    return count === 0 ;
  }
