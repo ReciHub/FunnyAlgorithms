@@ -9,7 +9,7 @@ def kthSmallest(arr, n, k):
   
     # Return k'th element in the  
     # sorted array  
-    return arr[k-1] 
+    return arr[k - 1] 
   
 # Driver code 
 if __name__=='__main__': 
