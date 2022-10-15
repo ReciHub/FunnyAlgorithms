@@ -20,6 +20,6 @@ int main()
         }
         full_sum += num;
     }
-    cout<< "Value of e is : " << full_sum/Titer << endl;
+    cout << "Value of e is : " << full_sum/Titer << endl;
     
 }
