@@ -1,24 +1,18 @@
-def binary_search(list, item)
-    low = 0
-    high = list.length - 1
+def binary_search(n, arr)
+    middle = arr.length / 2
+    i = 0
+    j = arr.length - 1
   
-    while low <= high
-      mid = (low + high) / 2
-      guess = list[mid]
-  
-      if guess == item
-        return mid
-      elsif guess > item
-        high = mid - 1
+    while i < j
+      if arr[middle] == n
+        return true
+      elsif arr[middle] < n
+        i = middle + 1
+        middle = i + j / 2
       else
-        low = mid + 1
+        j = middle - 1
+        middle = i + j / 2
       end
     end
-  
-    return nil
+    false
   end
-  
-  my_list = [1, 3, 5, 7, 9]
-  puts binary_search(my_list, 3) # => 1
-
-  puts binary_search(my_list, -1).inspect # => nil
