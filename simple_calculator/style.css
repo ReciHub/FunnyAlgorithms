@@ -1,0 +1,29 @@
+.title {
+    font-size: 40px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    width: 210px;
+    color: #ff444d;
+    border: solid black 1px;
+}
+
+input[type="button"] {
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #44ff73;
+    color: black;
+    border-color: #ff4456;
+    width: 100%;
+    height: 100%;
+}
+
+input[type="text"] {
+    border-radius: 10px;
+    text-align: right;
+    font-size: 35px;
+    background-color: rgb(168, 202, 202);
+    border-color: rgb(240, 13, 13);
+    width: 100%;
+    height: 100%;
+}
