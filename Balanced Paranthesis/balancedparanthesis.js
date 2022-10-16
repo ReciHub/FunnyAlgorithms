@@ -2,19 +2,22 @@
  
 let count = 0;
    
-   for(let i = 0 ; i < brackets.length ; ++i)
+   for(let i = 0 ; i < brackets.length ; ++i) {
 
        if( brackets[i] === ')' ) 
-    { 
-    count-- ;
-      }
-   
+     
+           count-- ;
+      
       else 
-     {
-      count++ ;
-        }
+     
+          count++ ;
+        
+ 
+    }
 
    return count === 0 ;
+
+
  }
 
 
