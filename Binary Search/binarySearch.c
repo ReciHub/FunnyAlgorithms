@@ -3,13 +3,14 @@
 #include <stdio.h>
 
 // A recursive binary search function. It returns
-// location of key element in given array[left....right] is present,
+// location of key element in given array[lower_bound....upper_bound] is present,
 // otherwise -1
-int binarySearch(int array[], int left, int right, int key)
+int binarySearch(int array[], int lower_bound, int upper_bound, int key)
 {
-    if (right >= left)
+    if (upper_bound >= lower_bound)
     {
-        int middle = left + (right - left) / 2;
+        int pos = (upper_bound - lower_bound)/2
+        int middle = lower_bound + pos;
 
         // If the element is present at the middle itself
         if (array[middle] == key)
@@ -17,10 +18,10 @@ int binarySearch(int array[], int left, int right, int key)
 
         // If element is smaller than middle, then it can only be present in left subarray
         if (array[middle] > key)
-            return binarySearch(array, left, middle - 1, key);
+            return binarySearch(array, lower_bound, middle - 1, key);
 
         // Else the element can only be present in right subarray
-        return binarySearch(array, middle + 1, right, key);
+        return binarySearch(array, middle + 1, upper_bound, key);
     }
 
     // We reach here when element is not present in array

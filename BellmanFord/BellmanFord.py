@@ -32,7 +32,7 @@ class Graph:
 
 
 		# Step 2: Relax all edges |V| - 1 times. A simple shortest 
-		# path from src to any other vertex can have at-most |V| - 1 
+		# path from src to any other vertex can have at most |V| - 1 
 		# edges 
 		for i in range(self.V - 1): 
 			# Update dist value and parent index of the adjacent vertices of 
