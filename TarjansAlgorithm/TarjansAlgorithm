@@ -1,0 +1,87 @@
+package FunnyAlgorithms.TarjansAlgorithm;
+
+import java.util.*;
+
+public class TarjansAlgorithm {
+    static int time = 0;
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int nV = sc.nextInt();
+        int nE = sc.nextInt();
+
+        ArrayList<ArrayList<Integer>> adjList = new ArrayList<>(nV);
+
+        for (int i = 0; i < nV; i++) {
+            adjList.add(new ArrayList<>());
+        }
+
+        for (int i = 1; i <= nE; i++) {
+            int source = sc.nextInt();
+            int destination = sc.nextInt();
+
+            addEdge(adjList, source, destination);
+        }
+
+        System.out.println(tarjans(nV, adjList));
+    }
+
+    public static ArrayList<ArrayList<Integer>> tarjans(int nV, ArrayList<ArrayList<Integer>> adj) {
+        boolean[] vis = new boolean[nV];
+
+        int[] disc = new int[nV];
+        Arrays.fill(disc, -1);
+        int[] low = new int[nV];
+        Arrays.fill(low, -1);
+
+        boolean[] rStack = new boolean[nV];
+        Stack<Integer> s = new Stack<>();
+
+        ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
+
+        for (int i = 0; i < nV; i++) {
+            if (!vis[i]) {
+                dfs(adj, i, vis, disc, low, rStack, s, ans);
+            }
+        }
+
+        return ans;
+    }
+
+
+    private static void dfs(ArrayList<ArrayList<Integer>> adj, int i, boolean[] vis, int[] disc, int[] low, boolean[] rStack, Stack<Integer> s, ArrayList<ArrayList<Integer>> ans) {
+        vis[i] = true;
+        rStack[i] = true;
+        disc[i] = time;
+        low[i] = time;
+        s.push(i);
+
+        time++;
+
+        for (Integer e : adj.get(i)) {
+            if (!vis[e]) {
+                dfs(adj, e, vis, disc, low, rStack, s, ans);
+                low[i] = Math.min(low[i], low[e]);
+            } else if (rStack[e]) {
+                low[i] = Math.min(low[i], disc[e]);
+            }
+        }
+
+        if (low[i] == disc[i]) {
+            ArrayList<Integer> temp = new ArrayList<>();
+            while (s.peek() != i) {
+                temp.add(s.peek());
+                rStack[s.pop()] = false;
+            }
+            temp.add(s.peek());
+            rStack[s.pop()] = false;
+
+            ans.add(temp);
+        }
+    }
+
+    private static void addEdge(ArrayList<ArrayList<Integer>> adjList, int source, int destination) {
+        adjList.get(source).add(destination);
+    }
+}
