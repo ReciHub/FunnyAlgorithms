@@ -7,6 +7,7 @@
    <img src="https://img.shields.io/github/forks/ReciHub/FunnyAlgorithms">
    <img src="https://img.shields.io/github/stars/ReciHub/FunnyAlgorithms?color=green">
    <img src="https://komarev.com/ghpvc/?username=ReciHub&color=blue">
+   <img src="https://img.shields.io/github/repo-size/ReciHub/FunnyAlgorithms">
 </p>
 
 ## Funny Algorithms
