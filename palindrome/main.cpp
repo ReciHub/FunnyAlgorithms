@@ -10,11 +10,11 @@ int main() {
     {
         if (n[i] != n[n.length() - 1 - i])
         {
-            cout << "Wyraz nie jest palindromem.";
+            cout << "Word is a palindrome!";
             return 0;
         }
     }
     
-    cout << "Wyraz jest palindromem." << endl;
+    cout << "Word is not a palindrome!" << endl;
     return 0;
 }
