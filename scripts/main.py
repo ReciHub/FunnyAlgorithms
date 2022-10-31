@@ -1,12 +1,15 @@
 
 import os
+from turtle import position
 
 BASE_PATH = './algorithms'
 
-def main():
+def load_dirs():
     tree = list(os.walk(BASE_PATH))
     dirs = tree[0][1]
-    create_readme(dirs)
+    return dirs
+
+# --- Missing Readme.md files
 
 def generate_readme(dir):
     with open('./scripts/readme.template.md', 'r') as file:
@@ -25,7 +28,41 @@ def create_readme(dirs):
             file.write(content)
             file.close()
 
+# --- Generating index
+
+def generate_content(dirs):
+    content = ''
+    dirs = sorted(list(dirs))
+    for dir in dirs:
+        path = dir.replace(' ', '%20')
+        content += f'- [{dir}](algorithms/{path}/Readme.md)\n'
+    return content
+
+def update_file(content):
+    with open('Readme.md', 'r') as f:
+        contents = f.readlines()
+        start_index = contents.index('<!-- algorithm_start -->\n')
+        end_index = contents.index('<!-- algorithm_end -->\n')
+    
+    contents = [row for idx, row in enumerate(contents) if idx <= start_index or idx >= end_index]
+
+    # print(start_index, end_index)
+
+    contents = [*contents[0:start_index+1], content, *contents[start_index+1:end_index+1]]
+
+    with open('Readme.md', 'w') as f:
+        contents = "".join(contents)
+        f.write(contents)
+
+def update_algorithm_list(dirs):
+    print('Updating Algorithms section on Readme.md')
+    content = generate_content(dirs)
+    update_file(content)
+
+# ---
 
 if __name__ == '__main__':
     print('Executing scripts')
-    main()
+    dirs = load_dirs()
+    # create_readme(dirs)
+    update_algorithm_list(dirs)

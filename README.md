@@ -40,3 +40,8 @@ After adding your funny algorithm share with us making a [pull request](https://
 Leave a :star: to the repository and share this with your friends!
 
 <img src="assets/img/github_star.png" alt="star the repo">
+
+## Algorithms
+
+<!-- algorithm_start -->
+<!-- algorithm_end -->
