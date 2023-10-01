@@ -46,8 +46,15 @@ void printArray(int arr[], int arr_size)
 // Driver Code
 int main()
 {
-	int arr[] = { 0, 1, 1, 0, 1, 2, 1, 2, 0, 0, 0, 1 };
-	int n = sizeof(arr) / sizeof(arr[0]);
+	int n;
+	cout<<"Please enter size of array"<<endl;
+	cin>>n;
+	int arr[n];
+	cout<<"Elements of array should be either 0, 1 or 2."<<endl;
+	for(int i=0;i<n;i++){
+		cout<<"Enter "<<i+1<<"th element of the array : "<<endl;
+		cin>>arr[i];
+	}
 
 	sort012(arr, n);
 
@@ -56,4 +63,4 @@ int main()
 	return 0;
 }
 
-// This code is contributed by Shivi_Aggarwal
+//This code is contibuted by Mugdha Kshirsagar
