@@ -7,6 +7,7 @@
    <img src="https://img.shields.io/github/forks/ReciHub/FunnyAlgorithms">
    <img src="https://img.shields.io/github/stars/ReciHub/FunnyAlgorithms?color=green">
    <img src="https://komarev.com/ghpvc/?username=ReciHub&color=blue">
+   <img src="https://img.shields.io/github/repo-size/ReciHub/FunnyAlgorithms">
 </p>
 
 ## Funny Algorithms
@@ -29,7 +30,8 @@ It is always fun to check new algorithms or see how the same algorithms can be r
 ## Submit a pull request
 
 After adding your funny algorithm share with us making a [pull request](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CONTRIBUTING.md#submitting-a-pull-request) so people can see how amazing is your algorithm.
-   - To submit a pull request, write a `Title` , `Leave a Comment` and click the `Create Pull Request`button. That's all. 
+   - To submit a pull request, write a `Title` , `Leave a Comment` and click the `Create Pull Request` button. That's all. 
+   - Make sure you add a good description in what you are adding and that each algorithm has a commit.
 
 <img src="assets/img/Create_Pull_Request.png" alt="Submit a pool request">
 
