@@ -53,7 +53,7 @@ int main()
     {   
         Zodiac_sign = "Sagittarius";
     }
-    else if ((1222 <= mmdd && mmdd  <= 1230)||((101 <= mmdd && mmdd  <= 119)))
+    else if ((1222 <= mmdd && mmdd  <= 1231)||((101 <= mmdd && mmdd  <= 119)))
     {   
         Zodiac_sign = "Capricorn";
     }
