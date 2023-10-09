@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include <iostream>
 using namespace std;
 #define int long long 
 
@@ -28,7 +28,10 @@ int modfact(int n, int p){
 }
 
 signed main(){
-    int n, p; cin>>n>>p;
-    cout<<modfact(n,p);
+    int t; cin >> t;
+    while (t--) {
+        int n, p; cin>>n>>p;
+        cout<<modfact(n,p);
+    }
     return 0;
 }
