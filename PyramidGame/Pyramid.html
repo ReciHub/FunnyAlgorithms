@@ -1,0 +1,48 @@
+<!--Build the pyramid game
+This HTML file contains a simple form with a prompt asking the user to enter the height of the pyramid. The buildPyramid JavaScript function builds the pyramid, and the result is displayed in a pre element using the drawPyramid function. Open this HTML file in a web browser, and it will prompt you to enter the height of the pyramid and then display the pyramid accordingly.-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pyramid Builder</title>
+    <style>
+      pre {
+        font-family: monospace;
+        white-space: pre-wrap;
+        font-size: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function buildPyramid(height) {
+        let pyramidOutput = "";
+
+        for (let i = 1; i <= height; i++) {
+          // Spaces
+          for (let j = 0; j < height - i; j++) {
+            pyramidOutput += " ";
+          }
+          // Blocks
+          for (let k = 0; k < i * 2 - 1; k++) {
+            pyramidOutput += "*";
+          }
+          pyramidOutput += "\n";
+        }
+
+        return pyramidOutput;
+      }
+
+      function drawPyramid() {
+        const height = prompt("Enter the height of the pyramid:");
+        const pyramid = buildPyramid(parseInt(height, 10));
+
+        // Display the pyramid in a pre element
+        document.body.innerHTML += "<pre>" + pyramid + "</pre>";
+      }
+
+      drawPyramid();
+    </script>
+  </body>
+</html>
