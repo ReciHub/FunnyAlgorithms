@@ -40,3 +40,21 @@ After adding your funny algorithm share with us making a [pull request](https://
 Leave a :star: to the repository and share this with your friends!
 
 <img src="assets/img/github_star.png" alt="star the repo">
+
+## Contributors ✨
+
+Thanks goes to these wonderful people :
+
+<table>
+  <tr>
+     <td>
+  <a href="https://github.com/ReciHub/FunnyAlgorithms/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=ReciHub/FunnyAlgorithms" />
+  </a>
+    </td>
+  </tr>
+</table>
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+<p align="right"><a href="#top">Back to top</a></p>
