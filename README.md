@@ -41,8 +41,9 @@ Leave a :star: to the repository and share this with your friends!
 
 <img src="assets/img/github_star.png" alt="star the repo">
 
-#### Join our amazing community as a code contributor, and help accelerate
-<br><br>
+## Join our amazing community as a code contributor, and help accelerate
+
+The Top contributers:
 <a href="https://github.com/ReciHub/FunnyAlgorithms/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ReciHub/FunnyAlgorithms" />
 </a>
