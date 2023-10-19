@@ -1,24 +1,47 @@
-#include <iostream>
-#include <random>
-#include <algorithm>
-#include <array>
+// C++ implementation of Bogo Sort 
+#include <bits/stdc++.h> 
+using namespace std; 
 
-// Uses C++20 features.
+// To check if array is sorted or not 
+bool isSorted(int a[], int n) 
+{ 
+	while (--n > 1) 
+		if (a[n] < a[n - 1]) 
+			return false; 
+	return true; 
+} 
 
-int main(void) {
-	std::array a = {9,10,4,3,5,6,8,1,7,2};
+// To generate permuatation of the array 
+void shuffle(int a[], int n) 
+{ 
+	for (int i = 0; i < n; i++) 
+		swap(a[i], a[rand() % n]); 
+} 
 
-	unsigned long long n = 0;
-	std::random_device rd;
-	std::mt19937 gen(rd());
-	while (!std::ranges::is_sorted(a)) {
-		std::ranges::shuffle(a, gen);
-		++n;
-	}
+// Sorts array a[0..n-1] using Bogo sort 
+void bogosort(int a[], int n) 
+{ 
+	// if array is not sorted then shuffle 
+	// the array again 
+	while (!isSorted(a, n)) 
+		shuffle(a, n); 
+} 
 
-	for (int i : a) {
-		std::cout << i << " ";
-	}
-	std::cout << " (took " << n << " iterations)" << std::endl;
-}
+// prints the array 
+void printArray(int a[], int n) 
+{ 
+	for (int i = 0; i < n; i++) 
+		printf("%d ", a[i]); 
+	printf("\n"); 
+} 
 
+// Driver code 
+int main() 
+{ 
+	int a[] = { 3, 2, 5, 1, 0, 4 }; 
+	int n = sizeof a / sizeof a[0]; 
+	bogosort(a, n); 
+	printf("Sorted array :\n"); 
+	printArray(a, n); 
+	return 0; 
+} 
