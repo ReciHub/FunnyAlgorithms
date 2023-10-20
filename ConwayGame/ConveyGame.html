@@ -1,0 +1,220 @@
+<!--
+    CONVEY'S GAME OF LIFE: WEB BROWSER IMPLEMENTATION
+     This code allows us to interactively draw patterns on a grid and run the simulation.
+     This implementation allows us to click on the canvas to draw and erase cells and provides buttons to start/stop the simulation and clear the grid. The simulation will continue to evolve until you stop it, so that we can draw patterns as we like.
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conway's Game of Life</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: aliceblue;
+      }
+
+      h1 {
+        border-bottom: 1px solid black;
+      }
+      .work {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+      button {
+        padding: 10px;
+        margin: 10px;
+        color: aliceblue;
+        background-color: rgb(69, 83, 176);
+        border-radius: 15px;
+      }
+
+      button:hover {
+        background-color: rgb(19, 153, 108);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="work">
+      <h1>Conway's Game of Life</h1>
+      <h6>
+        This implementation allows you to click on the canvas to draw and erase
+        cells and provides buttons to start/stop the simulation and clear the
+        grid. The simulation will continue to evolve until you stop it, and you
+        can draw patterns as you like.
+      </h6>
+      <canvas id="gridCanvas" width="400" height="400"></canvas>
+      <br />
+      <button id="startButton">Start</button>
+      <button id="clearButton">Clear</button>
+    </div>
+    <script>
+      const canvas = document.getElementById("gridCanvas");
+      const ctx = canvas.getContext("2d");
+      const rows = 40;
+      const cols = 40;
+      const cellSize = canvas.width / cols;
+      let grid = createEmptyGrid();
+
+      let isRunning = false;
+      let animationId;
+
+      canvas.addEventListener("click", handleCanvasClick);
+      document
+        .getElementById("startButton")
+        .addEventListener("click", toggleSimulation);
+      document
+        .getElementById("clearButton")
+        .addEventListener("click", clearGrid);
+
+      function createEmptyGrid() {
+        return new Array(rows)
+          .fill(null)
+          .map(() => new Array(cols).fill(false));
+      }
+
+      function drawGrid() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < rows; i++) {
+          for (let j = 0; j < cols; j++) {
+            ctx.beginPath();
+            ctx.rect(j * cellSize, i * cellSize, cellSize, cellSize);
+            ctx.fillStyle = grid[i][j] ? "black" : "white";
+            ctx.fill();
+            ctx.stroke();
+          }
+        }
+      }
+
+      function handleCanvasClick(event) {
+        if (!isRunning) {
+          const rect = canvas.getBoundingClientRect();
+          const mouseX = event.clientX - rect.left;
+          const mouseY = event.clientY - rect.top;
+          const clickedRow = Math.floor(mouseY / cellSize);
+          const clickedCol = Math.floor(mouseX / cellSize);
+          grid[clickedRow][clickedCol] = !grid[clickedRow][clickedCol];
+          drawGrid();
+        }
+      }
+
+      function countNeighbors(x, y) {
+        let count = 0;
+        const dx = [-1, -1, -1, 0, 0, 1, 1, 1];
+        const dy = [-1, 0, 1, -1, 1, -1, 0, 1];
+
+        for (let i = 0; i < 8; i++) {
+          const nx = x + dx[i];
+          const ny = y + dy[i];
+
+          if (nx >= 0 && nx < rows && ny >= 0 && ny < cols) {
+            count += grid[nx][ny] ? 1 : 0;
+          }
+        }
+
+        return count;
+      }
+
+      function updateGrid() {
+        const newGrid = createEmptyGrid();
+
+        for (let i = 0; i < rows; i++) {
+          for (let j = 0; j < cols; j++) {
+            const neighbors = countNeighbors(i, j);
+
+            if (grid[i][j]) {
+              newGrid[i][j] = neighbors === 2 || neighbors === 3;
+            } else {
+              newGrid[i][j] = neighbors === 3;
+            }
+          }
+        }
+
+        grid = newGrid;
+        drawGrid();
+
+        if (isRunning) {
+          animationId = requestAnimationFrame(updateGrid);
+        }
+      }
+
+      function toggleSimulation() {
+        if (!isRunning) {
+          isRunning = true;
+          document.getElementById("startButton").textContent = "Stop";
+          updateGrid();
+        } else {
+          isRunning = false;
+          document.getElementById("startButton").textContent = "Start";
+          cancelAnimationFrame(animationId);
+        }
+      }
+
+      function clearGrid() {
+        if (!isRunning) {
+          grid = createEmptyGrid();
+          drawGrid();
+        }
+      }
+
+      drawGrid();
+    </script>
+  </body>
+</html>
+
+<!--
+
+CODE EXPLANATION:
+
+JavaScript:
+
+The JavaScript code starts by selecting the canvas element and getting its rendering context (ctx).
+Grid Initialization:
+
+The rows and cols variables define the dimensions of the grid (40x40 cells), and cellSize calculates the size of each cell on the canvas.
+
+grid is a 2D array that represents the grid. It starts as an empty grid filled with false values, where false represents a dead cell.
+
+Event Listeners:
+
+The code sets up event listeners:
+canvas listens for clicks to handle cell toggling when the simulation is not running.
+The "Start" button (startButton) toggles the simulation on/off.
+The "Clear" button (clearButton) clears the grid.
+Drawing Cells:
+
+The drawGrid function is responsible for rendering the grid on the canvas. It loops through the grid array and draws rectangles (cells) based on whether they are alive (true) or dead (false).
+Cell Interaction:
+
+When you click on the canvas, the handleCanvasClick function calculates the row and column corresponding to the click and toggles the state of the cell.
+Counting Neighbors:
+
+The countNeighbors function takes the x and y coordinates of a cell and counts the number of live neighbors it has (neighbors can be in eight directions).
+Updating the Grid:
+
+The updateGrid function applies the rules of Conway's Game of Life to update the grid:
+For each cell, it counts the number of live neighbors.
+Based on the rules, it determines whether the cell should live, die, or remain unchanged.
+The new state is stored in a newGrid array to avoid affecting the current iteration.
+After processing all cells, the grid is updated with the new state, and the grid is redrawn on the canvas.
+If the simulation is running (isRunning is true), it schedules the next iteration using requestAnimationFrame.
+Toggling Simulation:
+
+The toggleSimulation function starts or stops the simulation. It changes the button text accordingly and either starts the animation loop or cancels it using requestAnimationFrame.
+Clearing the Grid:
+
+The clearGrid function resets the grid to an empty state when the "Clear" button is clicked. It only works when the simulation is not running.
+Initial Drawing:
+
+The drawGrid function is initially called to draw the empty grid on the canvas.
+Overall, this code creates an interactive Conway's Game of Life simulation that allows you to draw patterns, start/stop the simulation, and clear the grid. The simulation continues to evolve based on the rules of the game until you stop it.
+-->
