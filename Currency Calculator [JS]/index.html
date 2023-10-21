@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Currency Calculator</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header><h1>Currency Calculator</h1></header>
+    <div class="main">
+      <select id="inputCurrency">
+        <option value="EUR">EUR</option>
+        <option value="USD">USD</option>
+        <option value="CAD">CAD</option>
+        <option value="PLN">PLN</option>
+      </select>
+      <input id="input" type="text" />
+      <input width="50px" id="calcButton" type="button" value="calculate" />
+    </div>
+    <div class="main">
+      <select id="outputCurrency">
+        <option value="EUR">EUR</option>
+        <option value="USD">USD</option>
+        <option value="CAD">CAD</option>
+        <option value="PLN">PLN</option>
+      </select>
+      <input id="output" type="text" />
+      <input
+        width="50px"
+        class="calcButton"
+        type="button"
+        value="               "
+      />
+    </div>
+    <div class="output"></div>
+    <div class="attribution">
+      <a href="https://www.exchangerate-api.com">Rates By Exchange Rate API</a>
+    </div>
+    <script src="script.js" async defer></script>
+  </body>
+</html>
