@@ -1,46 +1,59 @@
-# Importing necessary modules
-import numpy as np  # NumPy library for numerical operations
-import itertools as it  # itertools module for creating iterators for efficient looping
+def calculate_flames(name1, name2):
+    name1 = name1.lower()
+    name2 = name2.lower()
 
-# Main function that calculates FLAME relationship status
-def main(name1, name2):
-    # Empty list to store unique letters from both names
-    unique_letters = []
+    # Remove spaces from the names
+    name1 = name1.replace(" ", "")
+    name2 = name2.replace(" ", "")
 
-    # Checking for unique letters in the first name
-    for n in name1:
-        # If the letter is not in the second name, add it to the unique letters list
-        if n not in name2:
-            unique_letters.append(n)
+    # Create a dictionary to count the frequency of each letter in the names
+    name1_count = {}
+    name2_count = {}
 
-    # Checking for unique letters in the second name
-    for n in name2:
-        # If the letter is not in the first name, add it to the unique letters list
-        if n not in name1:
-            unique_letters.append(n)
+    for letter in name1:
+        if letter in name1_count:
+            name1_count[letter] += 1
+        else:
+            name1_count[letter] = 1
 
-    # FLAME game letters and corresponding relationship statuses
-    game = "FLAME"
-    game_list = ["FRIEND", "LOVE", "AFFECTION", "MARRIAGE", "ENEMY"]
+    for letter in name2:
+        if letter in name2_count:
+            name2_count[letter] += 1
+        else:
+            name2_count[letter] = 1
 
-    # Creating a zipped list of FLAME letters and statuses
-    flame_status = zip(game, game_list)
+    # Calculate the total count of letters in both names
+    total_count = 0
 
-    # Generating a sequence of numbers from 1 to the number of unique letters
-    unique_letter_count = np.arange(1, len(unique_letters) + 1)
+    for letter in name1_count:
+        if letter in name2_count:
+            total_count += min(name1_count[letter], name2_count[letter])
 
-    # Looping through the unique letters and corresponding FLAME statuses
-    for count, (letter, status) in zip(unique_letter_count, it.cycle(flame_status)):
-        # If the count matches the number of unique letters, print the FLAME letter and status
-        if len(unique_letters) == count:
-            print(f"\nYou got the letter '{letter}' from FLAME.")
-            print("Your relationship status is:", status)
+    # Define the FLAMES acronym
+    flames = "FLAMES"
 
-# Entry point of the program
-if __name__ == "__main__":
-    # Getting input from the user for their name and their partner's name
-    name1 = input("Enter Your Name: ")
-    name2 = input("Enter Name of Your Partner: ")
+    # Determine the relationship
+    while len(flames) > 1:
+        remove_index = (total_count % len(flames)) - 1
+        if remove_index == -1:
+            remove_index = len(flames) - 1
+        flames = flames[:remove_index] + flames[remove_index + 1:]
 
-    # Calling the main function with the input names
-    main(name1, name2)
+    # Map the final letter to the corresponding relationship
+    relationship = {
+        'F': "Friends",
+        'L': "Lovers",
+        'A': "Affection",
+        'M': "Marriage",
+        'E': "Enemies",
+        'S': "Siblings",
+    }
+
+    return relationship[flames]
+
+# Input the names of the two people
+name1 = input("Enter the first name: ")
+name2 = input("Enter the second name: ")
+
+result = calculate_flames(name1, name2)
+print(f"The relationship between {name1} and {name2} is {result}.")
