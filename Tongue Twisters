@@ -1,0 +1,21 @@
+import random
+
+tongue_twisters = [
+    "She sells seashells by the seashore.",
+    "How can a clam cram in a clean cream can?",
+    "Fuzzy Wuzzy was a bear. Fuzzy Wuzzy had no hair. Fuzzy Wuzzy wasn't very fuzzy, was he?",
+    "Peter Piper picked a peck of pickled peppers.",
+    "Six slippery snails slid slowly seaward.",
+    "Sally sells seashells by the seashore; surely Sally sells seashells by the seashore.",
+    "A proper copper coffee pot.",
+]
+
+def generate_random_tongue_twister():
+    return random.choice(tongue_twisters)
+
+if __name__ == "__main__":
+    print("Welcome to the Random Tongue Twister Generator!")
+    while True:
+        input("Press Enter to get a tongue twister or 'q' to quit: ")
+        random_twister = generate_random_tongue_twister()
+        print("Tongue Twister: " + random_twister)
