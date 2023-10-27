@@ -1,0 +1,20 @@
+{
+  "name": "funnyalgorithms",
+  "version": "1.0.0",
+  "description": "<!-- <img align=\"center\" height=80% width=80% src=\"https://hacktoberfest.digitalocean.com/assets/HF-full-logo-b05d5eb32b3f3ecc9b2240526104cf4da3187b8b61963dd9042fdc2536e4a76c.svg\" alt=\"hacktoberfest-2020\"> -->",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heeba-khan/FunnyAlgorithms.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heeba-khan/FunnyAlgorithms/issues"
+  },
+  "homepage": "https://github.com/heeba-khan/FunnyAlgorithms#readme"
+}
