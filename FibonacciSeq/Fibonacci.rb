@@ -1,17 +1,14 @@
-class Fibonacci
-  def series
-    puts "Enter the Fibonacci value"
-    n=gets.to_i
-    f1=0
-    f2=1
-    f3=0
-        while f3<n do 
-          f3=f1+f2
-          puts f3
-          f1=f2
-          f2=f3  
-       end
+def fib(n)
+    if n <= 2
+        return 1
+    else
+        return fib(n-1) + fib(n-2)
     end
 end
-obj1=Fibonacci.new
-obj1.series
+
+puts "Enter limit : "
+limit = gets.to_i
+
+result = fib(limit)
+
+puts "Fib(#{limit}) = #{result}"
