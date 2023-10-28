@@ -1,27 +1,38 @@
-graph = {
-  '5' : ['3','7'],
-  '3' : ['2', '4'],
-  '7' : ['8'],
-  '2' : [],
-  '4' : ['8'],
-  '8' : []
-}
+from collections import defaultdict 
+  
+  
+class Graph: 
+  
+    def __init__(self): 
+        self.graph = defaultdict(list) 
 
-visited = [] 
-queue = []     
+    def addEdge(self,u,v): 
+        self.graph[u].append(v) 
 
-def bfs(visited, graph, node): 
-  visited.append(node)
-  queue.append(node)
+    def BFS(self, s):  
+        visited = [False] * (len(self.graph)) 
+        queue = [] 
+        queue.append(s) 
+        visited[s] = True
+  
+        while queue: 
+            s = queue.pop(0) 
+            print (s, end = " ") 
+            for i in self.graph[s]: 
+                if visited[i] == False: 
+                    queue.append(i) 
+                    visited[i] = True
+  
+# Driver code 
 
-  while queue:          
-    m = queue.pop(0) 
-    print (m, end = " ") 
-
-    for neighbour in graph[m]:
-      if neighbour not in visited:
-        visited.append(neighbour)
-        queue.append(neighbour)
-
-print("Following is the Breadth-First Search")
-bfs(visited, graph, '5')
+# g = Graph() 
+# g.addEdge(0, 1) 
+# g.addEdge(0, 2) 
+# g.addEdge(1, 2) 
+# g.addEdge(2, 0) 
+# g.addEdge(2, 3) 
+# g.addEdge(3, 3) 
+  
+# print ("Following is Breadth First Traversal"
+#                   " (starting from vertex 2)") 
+# g.BFS(2) 
