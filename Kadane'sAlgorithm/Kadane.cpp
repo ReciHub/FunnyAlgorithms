@@ -1,28 +1,25 @@
+/*
+ * Kadane's algorithm in C++
+ */
+
 #include <iostream>
-#include<vector>
-using namespace std;
+#include <algorithm>
 
-int maxArrSum(vector<int>arr, int n)
-{
-	int currMax = arr[0];
-	int maxSoFar = arr[0];
+int Solve(int arr[], int size);
 
-	for(int i=1;i<n;i++)
-	{
-		currMax = max(arr[i], currMax+arr[i]);
-		maxSoFar = max(currMax, maxSoFar);
-	}
-	return maxSoFar;
+int main() {
+	int arr[] = {-2, -3, 4, -1, -2, 1, 5, -3};
+	int size = 8;
+	std::cout << Solve(arr, size) << std::endl;
+	return 0;
 }
-int main() 
-{
-	int n;
 
-	vector<int> arr(1000);
-	cin>>n;
-	for(int i=0;i<n;i++)
-	{
-		cin>>arr[i];
+int Solve(int arr[], int size) {
+	
+	int max=0, cur=0;
+	for(int i=0; i<size; ++i) {
+		cur = std::max(arr[i], cur+arr[i]);
+		max = std::max(cur, max);
 	}
-	cout<<maxArrSum(arr, n);
+	return max;
 }
