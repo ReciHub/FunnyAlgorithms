@@ -1,0 +1,179 @@
+#include <iostream>
+#include <SDL.h>
+#include <SDL_image.h>
+#include <vector>
+
+const int SCREEN_WIDTH = 800;
+const int SCREEN_HEIGHT = 600;
+
+class Bird {
+public:
+    Bird(SDL_Renderer* renderer);
+    void jump();
+    void update();
+    void render();
+    bool isColliding(SDL_Rect pipeRect);
+    bool isGameOver();
+
+private:
+    SDL_Renderer* mRenderer;
+    SDL_Texture* mTexture;
+    SDL_Rect mRect;
+    int mVelocityY;
+    bool mIsJumping;
+};
+
+class Pipe {
+public:
+    Pipe(SDL_Renderer* renderer, int x);
+    void update();
+    void render();
+    int getX();
+
+private:
+    SDL_Renderer* mRenderer;
+    SDL_Texture* mTexture;
+    SDL_Rect mRect;
+    int mVelocityX;
+};
+
+Bird::Bird(SDL_Renderer* renderer) : mRenderer(renderer), mVelocityY(0), mIsJumping(false) {
+    SDL_Surface* surface = IMG_Load("bird.png");
+    mTexture = SDL_CreateTextureFromSurface(mRenderer, surface);
+    SDL_FreeSurface(surface);
+
+    mRect.x = 100;
+    mRect.y = SCREEN_HEIGHT / 2 - 25;
+    mRect.w = 50;
+    mRect.h = 50;
+}
+
+void Bird::jump() {
+    if (!mIsJumping) {
+        mVelocityY = -10;
+        mIsJumping = true;
+    }
+}
+
+void Bird::update() {
+    mVelocityY += 1;
+    mRect.y += mVelocityY;
+
+    if (mRect.y < 0) {
+        mRect.y = 0;
+        mVelocityY = 0;
+    }
+
+    if (mRect.y + mRect.h > SCREEN_HEIGHT) {
+        mRect.y = SCREEN_HEIGHT - mRect.h;
+        mVelocityY = 0;
+    }
+
+    mIsJumping = false;
+}
+
+void Bird::render() {
+    SDL_RenderCopy(mRenderer, mTexture, NULL, &mRect);
+}
+
+bool Bird::isColliding(SDL_Rect pipeRect) {
+    return SDL_HasIntersection(&mRect, &pipeRect);
+}
+
+bool Bird::isGameOver() {
+    return mRect.y + mRect.h >= SCREEN_HEIGHT;
+}
+
+Pipe::Pipe(SDL_Renderer* renderer, int x) : mRenderer(renderer), mVelocityX(-2) {
+    SDL_Surface* surface = IMG_Load("pipe.png");
+    mTexture = SDL_CreateTextureFromSurface(mRenderer, surface);
+    SDL_FreeSurface(surface);
+
+    mRect.x = x;
+    mRect.w = 100;
+    mRect.h = rand() % 400 + 100;
+    mRect.y = 0;
+}
+
+void Pipe::update() {
+    mRect.x += mVelocityX;
+    if (mRect.x + mRect.w < 0) {
+        mRect.x = SCREEN_WIDTH;
+        mRect.h = rand() % 400 + 100;
+    }
+}
+
+void Pipe::render() {
+    SDL_RenderCopy(mRenderer, mTexture, NULL, &mRect);
+}
+
+int Pipe::getX() {
+    return mRect.x;
+}
+
+int main(int argc, char* args[]) {
+    SDL_Init(SDL_INIT_VIDEO);
+    IMG_Init(IMG_INIT_PNG);
+    
+    SDL_Window* window = SDL_CreateWindow("Flappy Bird", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+    SDL_Renderer* renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    
+    Bird bird(renderer);
+    std::vector<Pipe> pipes;
+    pipes.emplace_back(renderer, 400);
+    pipes.emplace_back(renderer, 600);
+
+    bool quit = false;
+    SDL_Event e;
+    
+    while (!quit) {
+        while (SDL_PollEvent(&e) != 0) {
+            if (e.type == SDL_QUIT) {
+                quit = true;
+            }
+            if (e.type == SDL_KEYDOWN) {
+                if (e.key.keysym.sym == SDLK_SPACE) {
+                    bird.jump();
+                }
+            }
+        }
+        
+        bird.update();
+
+        for (auto& pipe : pipes) {
+            pipe.update();
+            if (bird.isColliding(pipe.mRect)) {
+                quit = true; // Game over
+            }
+        }
+
+        // Remove off-screen pipes and add new ones
+        if (pipes.front().getX() + pipes.front().mRect.w < 0) {
+            pipes.erase(pipes.begin());
+            pipes.emplace_back(renderer, SCREEN_WIDTH);
+        }
+
+        SDL_RenderClear(renderer);
+
+        for (auto& pipe : pipes) {
+            pipe.render();
+        }
+
+        bird.render();
+
+        SDL_RenderPresent(renderer);
+
+        if (bird.isGameOver()) {
+            quit = true; // Game over
+        }
+        
+        SDL_Delay(10);
+    }
+    
+    SDL_DestroyRenderer(renderer);
+    SDL_DestroyWindow(window);
+    SDL_Quit();
+    IMG_Quit();
+
+    return 0;
+}
