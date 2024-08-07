@@ -1,16 +1,17 @@
 //Printing n Perfect Numbers
 #include <stdio.h>
+#include <math.h>
 
 int isPerfect(int num){
-  int count=0;
-  for(int i=1;i<num;i++){
-    if(num%i==0){
-      count+=i;
+  if(num==1)return 0;
+    int sum=1;
+    int lim=sqrt(num);
+    
+    for(int n=2;n<=lim;n++){
+        if(num%n==0){sum+=n+(num/n);}
     }
-  }
-  if(num==count)
-    return 1;
-  else
+    
+    if(sum==num)return 1;
     return 0;
 }
 
@@ -20,7 +21,7 @@ int main(){
   scanf("%d",&num);
   for(int i=0;i<num;){
     if(isPerfect(temp)==1){
-      printf("%d",temp);
+      printf("%d\n",temp);
       i++;
       temp++;
     }
