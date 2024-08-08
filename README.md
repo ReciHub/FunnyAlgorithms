@@ -12,7 +12,7 @@
 
 ## Funny Algorithms
 
-_A repository with a bunch of funny algorithms, beginners friendly :sparkles:_
+_A repository with a bunch of funny algorithms, beginners friendly:sparkles:_
 
 _Don't forget to read our [Contributing Guide](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CODE_OF_CONDUCT.md)_
 
@@ -29,7 +29,8 @@ It is always fun to check new algorithms or see how the same algorithms can be r
 
 ## Submit a pull request
 
-After adding your funny algorithm share with us making a [pull request](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CONTRIBUTING.md#submitting-a-pull-request) so people can see how amazing is your algorithm.
+After adding your funny algorithm, share it with us by making a [pull request](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CONTRIBUTING.md#submitting-a-pull-request) so others can see how amazing your algorithm is.
+
    - To submit a pull request, write a `Title` , `Leave a Comment` and click the `Create Pull Request` button. That's all. 
    - Make sure you add a good description in what you are adding and that each algorithm has a commit.
 
