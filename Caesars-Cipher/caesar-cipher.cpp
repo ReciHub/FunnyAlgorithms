@@ -38,7 +38,7 @@ void caesarShift(string& phrase, int shiftAmount) {
         else if (phrase[i] >= 97 && phrase[i] <= 122 && phrase[i] + normalizedAmount > 122)  // Lowercase overflow
             phrase[i] = phrase[i] + normalizedAmount - 26;
 
-        else if (!(phrase[i] >= 65 && phrase[i] <= 90) && !(phrase[i] >= 97 && phrase[i] <= 122))  // Leave all not letter characters as they are
+        else if (!(phrase[i] >= 65 && phrase[i] <= 90) && !(phrase[i] >= 97 && phrase[i] <= 122))  // Leave all non-letter characters as they are
             continue;
 
         else
