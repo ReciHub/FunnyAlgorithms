@@ -13,7 +13,7 @@ void main() {
     
     digit = num%10;
     
-    arm = arm + pow(digit,3);
+    arm = arm + pow(digit,3).toInt();
     
     num=(num/10).toInt();
     
