@@ -1,17 +1,19 @@
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
 int isPerfect(int num){
-  int count=0;
-  for(int i=1;i<num;i++){
-    if(num%i==0){
-      count+=i;
+    
+    if(num==1)return 0;
+    int sum=1;
+    int lim=sqrt(num);
+    
+    for(int n=2;n<=lim;n++){
+        if(num%n==0){sum+=n+(num/n);}
     }
-  }
-  if(num==count)
-    return 1;
-  else
+    
+    if(sum==num)return 1;
     return 0;
 }
 
