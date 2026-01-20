@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 50px auto;
+    max-width: 400px;
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    font-size: 18px;
+    color: #666;
+}
+
+button {
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#generateJoke {
+    background-color: #399e3c;
+    color: #fff;
+}
+
+#generateJoke:hover {
+    background-color: #28772c;
+}
+
+#showAnswer {
+    background-color: #1248bd;
+    color: #fff;
+}
+
+#showAnswer:hover {
+    background-color: #183a83;
+}
+
+#answer {
+    color: #183a83;
+}
