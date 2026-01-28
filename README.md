@@ -12,9 +12,12 @@
 
 ## Funny Algorithms
 
-_A repository with a bunch of funny algorithms, beginners friendly :sparkles:_
+_A repository with a bunch of funny algorithms, beginner-friendly ✨
 
-_Don't forget to read our [Contributing Guide](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CONTRIBUTING.md) and our [Code of Conduct](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CODE_OF_CONDUCT.md)_
+Don't forget to read our Contributing Guide
+ and our Code of Conduct_
+
+(https://github.com/ReciHub/FunnyAlgorithms/blob/master/CONTRIBUTING.md) (https://github.com/ReciHub/FunnyAlgorithms/blob/master/CODE_OF_CONDUCT.md)_
 
 ## Algorithms are fun, right?
 
@@ -22,21 +25,22 @@ So why not add the funniest algorithms in this repository? We can share with all
 
 You can contribute in two ways:
 
-- Add a new algorithm inside a folder, name the folder with the type of the algorithm. Example: (Algorithm: bogoSort.c, folder: sort)
-- Rewrite an existing algorithm in another programming language
+Add a new algorithm inside a folder named after the algorithm type.
+Example: Algorithm: bogoSort.c, Folder: sort
+Rewrite an existing algorithm in another programming language
 
 It is always fun to check new algorithms or see how the same algorithms can be rewritten in different programming languages.
 
 ## Submit a pull request
 
-After adding your funny algorithm share with us making a [pull request](https://github.com/ReciHub/FunnyAlgorithms/blob/master/CONTRIBUTING.md#submitting-a-pull-request) so people can see how amazing is your algorithm.
-   - To submit a pull request, write a `Title` , `Leave a Comment` and click the `Create Pull Request` button. That's all. 
-   - Make sure you add a good description in what you are adding and that each algorithm has a commit.
+To submit a pull request, write a Title, leave a comment, and click the Create Pull Request button — that’s all!(https://github.com/ReciHub/FunnyAlgorithms/blob/master/CONTRIBUTING.md#submitting-a-pull-request) so people can see how amazing is your algorithm.
+  
+   Make sure you include a clear description of what you are adding and ensure that each algorithm has its own commit.
 
-<img src="assets/img/Create_Pull_Request.png" alt="Submit a pool request">
+<img src="assets/img/Create_Pull_Request.png" alt="Submit a pull request">
 
 ## Enjoyed? 
 
-Leave a :star: to the repository and share this with your friends!
+Leave a ⭐ on the repository and share it with your friends!
 
 <img src="assets/img/github_star.png" alt="star the repo">
